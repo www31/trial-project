@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Flexbox Crash Course</title>
+</head>
+
+<body>
+
+    <!-- <div class="flex-container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+    <h3>Hello</h3>
+    <div class="flex-container2">
+        <div class="title">Current Certification</div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quia blanditiis ratione quod sunt
+            voluptatibus aliquid molestiae voluptates nisi voluptatum.</p>
+        <div class="pdfRenderer">This is a pdf</div>
+    </div>
+
+    <div class="wrap">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+    </div> -->
+
+    <!-- DESIRED RESULT -->
+
+    <!-- <div class="result">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+    </div>
+
+    <div id="container">
+        <div id="a">
+            a
+        </div>
+        <div id="b">
+            b
+        </div>
+    </div>
+
+    <div class="container-nowrap">
+        <div class="flex-item">ITEM 1</div>
+        <div class="flex-item">ITEM 2</div>
+        <div class="flex-item">ITEM 3</div>
+    </div>
+
+    <div class="container-sample flex-parent">
+        <div class="flex-item">ITEM 1</div>
+        <div class="flex-item">ITEM 2</div>
+        <div class="flex-item">ITEM 3</div>
+        <div class="flex-item">ITEM Last</div>
+    </div>
+    <div class="container-sample flex-parent">
+        <div class="flex-item">ITEM 1</div>
+        <div class="flex-item">ITEM 2</div>
+        <div class="flex-item">ITEM 3</div>
+        <div class="flex-item">ITEM 4</div>
+        <div class="flex-item">ITEM 5</div>
+        <div class="flex-item">ITEM Last</div>
+    </div>
+    <div class="container-sample flex-parent">
+        <div class="flex-item">ITEM 1</div>
+        <div class="flex-item">ITEM 2</div>
+        <div class="flex-item">ITEM Last</div>
+    </div> -->
+
+    <!-- <div class="container">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p class="end"></p>
+    </div> -->
+
+    <!-- <h1>Vertical Boxes</h1>
+    <p>Goal: Have one box on the left, and two boxes on the right that are stacked. All without nesting, so that the
+        order of the boxes can be changed on smaller screen sizes.</p>
+    <div class="container">
+        <div class="cell cell-1">
+            <h2>One</h2>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto pariatur rerum, illum accusantium cupiditate
+            ipsam, eaque quae fugit cum assumenda ad. Modi, excepturi. Assumenda, nobis, consequatur? Aliquid
+            repellendus quis, iure. Lorem ipsum dolor sit
+            amet, consectetur adipisicing elit. Iusto pariatur rerum, illum accusantium cupiditate ipsam, eaque quae
+            fugit cum assumenda ad. Modi, excepturi. Assumenda, nobis, consequatur? Aliquid repellendus quis, iure.
+            Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Iusto pariatur rerum, illum accusantium cupiditate ipsam, eaque quae fugit cum assumenda
+            ad. Modi, excepturi. Assumenda, nobis, consequatur? Aliquid repellendus quis, iure. Lorem ipsum dolor sit
+            amet, consectetur adipisicing elit.
+            Iusto pariatur rerum, illum accusantium cupiditate ipsam, eaque quae fugit cum assumenda ad. Modi,
+            excepturi. Assumenda, nobis, consequatur? Aliquid repellendus quis, iure.
+        </div>
+        <div class="cell cell-2">
+            <h2>Two</h2>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste mollitia temporibus id sint illum doloremque
+            pariatur nulla vel soluta, nostrum vitae, suscipit ea natus sed eaque in velit deserunt deleniti!
+        </div>
+        <div class="cell cell-3">
+            <h2>Three</h2>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, architecto perferendis voluptatum
+            accusantium est ipsam fugit, laudantium fugiat nostrum consectetur earum. Asperiores, similique deleniti
+            nobis nemo error, iste iure architecto.
+        </div>
+        <div class="cell cell-4">
+            <h2>Four</h2>
+            In malesuada rhoncus augue, id tempus urna lacinia vitae. Suspendisse cursus magna nisl, eget pellentesque
+            arcu molestie non. Sed in enim quis dolor vulputate efficitur. Nunc feugiat ac orci vel volutpat. Donec
+            tincidunt nisi eget tristique vehicula. Pellentesque vulputate odio ligula, vel consectetur diam tincidunt
+            consequat. Aenean iaculis porttitor eros. Ut sed sapien eget tellus varius scelerisque nec id odio. Nulla
+            viverra lectus ut ligula pretium pulvinar. Mauris libero turpis, efficitur vitae enim vel, ornare laoreet
+            erat. Phasellus luctus lobortis tortor id vehicula. Sed orci turpis, euismod vitae risus at, rhoncus dictum
+            diam. Integer imperdiet luctus nisi, sit amet lacinia velit dictum sed.
+        </div>
+        <div class="cell cell-5">
+            <h2>Five</h2>
+            Vivamus ultrices ex eget velit ultrices, et maximus diam placerat. Vivamus nisi metus, aliquam ac aliquet
+            non, pellentesque elementum mauris. Mauris dapibus lorem ut turpis scelerisque, sed blandit massa
+            vestibulum. Aenean et dui ac sapien gravida porttitor. Suspendisse potenti. Aenean venenatis purus in lorem
+            consequat, ut finibus lectus pretium. Phasellus tristique velit vitae neque facilisis, at tempus elit
+            euismod. Aenean congue ut nisi et maximus. Nulla venenatis pharetra ipsum id facilisis. Integer sit amet
+            odio sem.
+        </div>
+    </div> -->
+
+    <div class="container">
+        <div class="block1">text here</div>
+        <div class="block2">text here</div>
+        <div class="block3">text here</div>
+      </div>
+      
+    <script src="script.js"></script>
+</body>
+
+</html>

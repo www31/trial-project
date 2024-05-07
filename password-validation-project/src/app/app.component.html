@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+
+<hr/>
+
+<form (ngSubmit)="login()" [formGroup]="loginForm" novalidate>
+  <p>Email : <input type="text" formControlName="Email"/></p>
+  <p>Password : <input type="password" formControlName="Password"/></p>
+  <p>Confirm Password : <input type="text" formControlName="ConfirmPassword"/></p>
+  <span *ngIf="loginForm.errors?.['passwordmatcherror']">Password  does not match</span>
+<button [disabled]="loginForm.invalid">Login</button>
+</form>
