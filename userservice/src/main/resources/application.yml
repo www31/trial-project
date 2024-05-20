@@ -11,7 +11,29 @@ spring:
       hibernate:
         format_sql: true
         globally_quoted_identifiers: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: lpshris1@gmail.com
+    password: xcmhecferfilhhmi
+    default-encoding: UTF-8
+    properties:
+      mail: 
+        mime:
+           charset: UTF
+        smtp: 
+           writetimeout: 10000
+           connectiontimeout: 10000
+           timeout: 10000
+           auth: true
+           starttls:
+               enable: true
+               required: true
+    verify: 
+       host: http://localhost:9000
 org:
   hibernate:
     dialect:
       MySQL8Dialect: org.hibernate.dialect.MySQL8Dialect
+server:
+   port: 9000
