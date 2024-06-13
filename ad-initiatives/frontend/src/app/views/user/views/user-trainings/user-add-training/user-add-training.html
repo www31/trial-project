@@ -1,0 +1,97 @@
+<div class="popup" *ngIf="isAddTrainingVisible">
+  <div class="row">
+    <div class="container-violet">
+      <span class="pi pi-close" style="float: right" (click)="closePopup()">X</span>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="row" style="padding-left: 5px;">
+      <div class="col-md-12">
+        <h6 class="h6">Name</h6>
+      </div>
+    </div>
+    <div class="row" style="padding-left: 5px;">
+      <div class="col-md-12">
+        <input class="textbox-name" [(ngModel)]="searchCriteria.trainingName">
+      </div>
+    </div>
+
+    <div class="row" style="padding-left: 5px;">
+      <div class="col-md-12">
+        <h6 class="h6">Skill</h6>
+      </div>
+    </div>
+    <div class="row" style="padding-left: 5px;">
+      <div class="col-md-12">
+        <select id="skill" name="skill" class="textbox-skill" [(ngModel)]="searchCriteria.skillName">
+          <option *ngFor="let skill of skillsList" [value]="skill.skillName">{{ skill.skillName }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row" style="padding-left: 5px;">
+      <div class="col-md-6">
+        <h6 class="h6">Start Date</h6>
+      </div>
+      <div class="col-md-6">
+        <h6 class="h6">End Date</h6>
+      </div>
+    </div>
+    <div class="row" style="padding-left: 5px;">
+      <div class="col-md-6">
+        <input type="date" class="textbox-date" [(ngModel)]="searchCriteria.startDate">
+      </div>
+      <div class="col-md-6">
+        <input type="date" class="textbox-date" [(ngModel)]="searchCriteria.endDate">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn-search" style="float: right" (click)="Search()">Search</button>
+      </div>
+    </div>
+
+    <ng-container *ngIf="trainingList && trainingList.length > 0; else noResults">
+      <div class="container-bordered" *ngFor="let training of trainingList">
+        <!-- Display each training item here -->
+        <div>
+          <p class="bold-text">{{ training.trainingName }}</p>
+          <p class="p"><span>{{ training.description }}</span></p>
+          <p class="bold-text">Has Certification: <span>{{ training.certification ? 'Yes' : 'No' }}</span></p>
+          <p class="bold-text">Training Type: <span>{{ training.trainingType }}</span></p>
+          <p class="bold-text">Multiple Sessions: <span>{{ training.isRequired ? 'Yes' : 'No' }}</span></p>
+          <p class="bold-text">Due Date: <span>{{ training.dueDate }}</span></p>
+        </div>
+          <div class = "row">
+                <div class = "col-md-4">
+                    <div class = "container-tag"> Java </div>
+                </div>
+                <div class = "col-md-4">
+                    <div class = "container-tag"> Spring </div>
+                </div>
+                <div class = "col-md-2">
+                  
+                </div>
+                <div class = "col-md-2">
+                    <button class="btn-register" (click)="register(training)">Register</button>
+                </div>
+          </div>
+        </div>
+    </ng-container>
+
+    <!-- Displayed when no results found -->
+    <ng-template #noResults>
+      <div class="container-bordered">
+        <p>No results found.</p>
+      </div>
+    </ng-template>
+
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn-search" style="float: right" (click)="closePopup()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

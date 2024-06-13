@@ -1,0 +1,7 @@
+<div *ngFor="let role of roles">
+    <div class="skill-list">
+      <span *ngFor="let skill of role.skills" class="badge-wrapper">
+        <p-badge [value]="skill" badgeSize="large" class="p-badge" [style.background-color]="getBadgeStyle(role)['background-color']" [style.color]="getBadgeStyle(role)['color']">{{ skill }}</p-badge>
+      </span>
+    </div>
+</div>

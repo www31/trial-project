@@ -1,0 +1,150 @@
+<div class="main-set-training-form" *ngIf="isSetTrainingOpen">
+    <div class="set-training-details" (click)="preventBackdropClick($event)">
+        <h4>Set Training</h4>
+        <div class="set-training-contents">
+            <div class="set-training-category">
+                <p>Category</p>
+                <p-dropdown
+                    [options]="categoryList"
+                    (ngModelChange)="onSingleSelectChange($event)"
+                    [(ngModel)]="categoryOptions"
+                    styleClass="singleselect"
+                >
+                </p-dropdown>
+            </div>
+
+            <div class="set-training-sub-category" *ngIf="subCategoryLabel !== 'users'">
+                <p>{{ subCategoryLabel }}</p>
+                <p-dropdown
+                    [options]="getSubCategory()"
+                    [(ngModel)]="subCategoryOptions"
+                    styleClass="singleselect"
+                >
+                </p-dropdown>
+            </div>
+            
+        </div>
+
+        <div class="main-selected-user-list" *ngIf="selectedUsers.length > 0">
+            <p>Selected</p>
+            <p>{{ selectedUsers.length }} Members</p>
+            <div class="user-contents" *ngFor="let item of selectedUsers">
+                <div class="user-details">
+                    <p>{{ item.lastname }}, {{ item.firstname }}</p>
+                    <p class="sub-details">{{ item.careerStep }}</p>
+                    <p class="sub-details">{{ item.region }}</p>
+                </div>
+                <img (click)="removeItem(item)" src="../../../../../assets/delete.png"/>
+            </div>
+        </div>
+
+        <div class="main-user-list-modal" *ngIf="isUserListModalOpen">
+            <div class="user-list-modal-contents">
+                <h5>Search User</h5>
+                <div class="set-training-contents">
+                    <div class="set-training-name">
+                        <p>Name</p>
+                        <input type="text" [(ngModel)]="filterQuery" (input)="filterUsers()" placeholder="Search by name">
+                    </div>
+                    <div class="set-training-sub-category-userlist">
+                        <p>ODC</p>
+                        <p-dropdown
+                            [options]="odc"
+                            [(ngModel)]="subCategoryOptions"
+                            styleClass="singleselect"
+                        >
+                        </p-dropdown>
+                    </div>
+                    
+                </div>
+                <div class="main-userlist">
+                    <div 
+                        class="user" 
+                        *ngFor="let item of filterUsers()" 
+                        (click)="toggleSelectionUser(item)"
+                        [ngClass]="{'selected': isSelected(item)}"
+                    >
+                        <div class="user-details">
+                            <p>{{ item.lastname }}, {{ item.firstname }}</p>
+                            <p class="sub-details">{{ item.careerStep }}</p>
+                            <p class="sub-details">{{ item.region }}</p>
+                        </div>
+                    </div>  
+                </div>
+                <div class="set-training-form-button">
+                    <app-custom-button class="cancel-button" 
+                        [label]="'Cancel'" 
+                        [backgroundColor]="'var(--white)'"
+                        [textColor]="'var(--medium-purple)'"
+                        (buttonClicked)="onClosedUserListModal()"
+                    ></app-custom-button>
+                    <app-custom-button class="save-button" 
+                        [label]="'Select'" 
+                        [backgroundColor]="'var(--medium-purple)'"
+                        (buttonClicked)="selectUser()"
+                        [disabled]="isButtonDisabled()"
+                        [ngClass]="{'disabled-button': isButtonDisabled()}"
+                    ></app-custom-button>
+                </div>
+            </div>
+        </div>
+
+        <div class="set-training-required">
+            <p>Required Trainings</p>
+            <p-multiSelect
+                [options]="skillList" 
+                [(ngModel)]="selectedSkillOption" 
+                scrollHeight="250px" 
+                display="chip"
+                styleClass="multiselect-training"
+                panelStyleClass="multiselect-panel-training"
+                (ngModelChange)="onMultiSelectChange($event)"
+                placeholder="Select Trainings" 
+            >
+                <ng-template let-group pTemplate="group">
+                    <div class="flex align-items-center">
+                        <span>{{ group.label }}</span>
+                    </div>
+                </ng-template>
+            </p-multiSelect>
+        </div>
+        <div class="set-training-form-group-sets" *ngFor="let field of formFields">
+            <div class="set-training-form-group">
+              <label>Name</label>
+              <strong>{{ field.label }}</strong>
+            </div>
+            <div class="set-training-form-group">
+              <label>Date:</label>
+              <app-custom-calendar (dateSelected)="selectedDate($event)" [context]="field"></app-custom-calendar>
+            </div>
+        </div>
+        <div class="set-training-form-button">
+            <app-custom-button class="cancel-button" 
+                [label]="'Cancel'" 
+                [backgroundColor]="'var(--white)'"
+                [textColor]="'var(--medium-purple)'"
+                (buttonClicked)="onClosed()"
+            ></app-custom-button>
+            <app-custom-button class="save-button" 
+                [label]="'Apply'" 
+                [backgroundColor]="'var(--medium-purple)'"
+                (buttonClicked)="applyTrainings()"
+            ></app-custom-button>
+        </div>
+        <app-dialog-box
+            [isOpen]="isThereTrainingsSelected"
+            [msgStatus]="'error'"
+            [msg]="requiredFieldDialogMsg()"
+            [imgStatus]="'../../../../../assets/warning.svg'"
+            (dialogClosed)="closeDialog()"
+        ></app-dialog-box>
+        <app-dialog-box
+            [isOpen]="isAddTrainingSuccess"
+            [msgStatus]="'success'"
+            [msg]="'Trainings successfully set'"
+            [imgStatus]="'../../../../../assets/success.png'"
+            (dialogClosed)="closeDialog('success')"
+        >
+        </app-dialog-box>
+    </div>
+</div>

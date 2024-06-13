@@ -1,0 +1,24 @@
+.next-button {
+    background-color: var(--purple);
+    padding: 0.5em 1.2em;
+    color: var(--white);
+    border: 1px solid var(--purple);
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.next-button:hover {
+    opacity: 0.5;
+}
+
+.next-button:active {
+    transform: scale(0.95);
+}
+
+.next-button:disabled,
+.next-button[disabled]{
+  background-color: var(--container-background) !important;
+  border-color: var(--primary-color-light) !important;
+  color: var(--text-color) !important;
+}

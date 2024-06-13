@@ -1,0 +1,59 @@
+<ng-container>
+    <div class="row main-screen">
+        <div class="col-md-12">
+            <div class="row">
+                <label class="subHeader">
+                    My Trainings
+                </label>
+            </div>
+            <div class="col-md-12 ">
+                <div class="contentScreen">
+                    <p-card class="contentCard table">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="container not-started">
+                                    <label class="container-label">Not Yet Started</label>
+                                </div>
+                                <div class="container in-progress">
+                                    <label class="container-label">In Progress</label>
+                                </div>
+                                <div class="container completed">
+                                    <label class="container-label">Completed</label>
+                                </div>
+                                <div class="container overdue">
+                                    <label class="container-label">Overdue</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-2">
+                            <span (click)="onAddTrainingClicked()">+ ADD TRAININGS</span>
+                        </div>
+                    </div>
+                    <div class="row" style=" margin-top: 20px;">
+                        <div class="col-sm-3" *ngFor="let training of trainingList">
+                            <div class="training-container">
+                                <p class="bold-text">{{ training.trainingName }}</p>
+                                <p class="p"><span>{{ training.description }}</span></p>
+                                <p class="bold-text">Has Certification: <span>{{ training.certification ? 'Yes' : 'No'
+                                        }}</span></p>
+                                <p class="bold-text">Mandatory: <span>{{ training.isRequired ? 'Yes' : 'No' }}</span>
+                                </p>
+                                <p class="bold-text">Due Date: <span>{{ training.dueDate }}</span></p>
+                                <p class="bold-text">Certification Required? <span>{{ training.isRequired ? 'Yes' : 'No'
+                                        }}</span></p>
+                                <p class="bold-text">No. of Topics: <span></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </p-card>
+                </div>
+                <user-add-training-popup *ngIf="isAddTrainingVisible" (close)="onPopupClose()"
+                    [isAddTrainingVisible]="isAddTrainingVisible">
+                </user-add-training-popup>
+            </div>
+        </div>
+    </div>
+</ng-container>

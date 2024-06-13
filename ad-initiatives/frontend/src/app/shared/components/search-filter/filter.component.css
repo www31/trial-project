@@ -1,0 +1,112 @@
+.search-box-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 20px;
+  top: -1px;
+}
+
+.search-container {
+  width: 400px;
+  position: relative;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-field {
+  width: 400px;
+  padding: 10px;
+  margin: 10px 0 0 0;
+  display: inline-block;
+  position: relative;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  box-sizing: border-box;
+}
+
+.filter-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom:-1px;
+  right: 7px;
+  top: 10;
+  height: 100%;
+}
+
+.filter-button:focus {
+  outline: none;
+}
+
+.filter-button i {
+  margin-top: 7px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  margin-bottom: 2px;
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+
+li:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.remove-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.remove-button:focus {
+  outline: none;
+}
+
+.box-container {
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.done-button {
+  width: calc(100% - 20px);
+  padding: 10px;
+  background-color: #8a2be2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.done-button:hover {
+  opacity: 0.5;
+}
+
+.filter-div {
+height: 105%;
+width: 110%;
+right: 10px;
+align-items: left !important;
+}

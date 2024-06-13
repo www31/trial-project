@@ -1,0 +1,96 @@
+.h2{
+    font-family: "Montserrat", sans-serif;
+    padding-bottom: 20px;
+}
+
+.h4{
+    font-family: "Montserrat", sans-serif;
+    padding-bottom: 20px;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container-label {
+    color: white;
+    font-size: small;
+    cursor: pointer;
+}
+
+.main-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    padding: 2em;
+    text-align: center;
+    width: auto;
+    height: 40px;
+    padding-top: 7px;
+    border-radius: 20px;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer; 
+}
+
+.not-started {
+    background-color: grey;
+}
+
+.in-progress {
+    background-color: blue;
+}
+
+.completed {
+    background-color: green;
+    
+}
+
+.overdue {
+    background-color: red;;
+}
+
+.training-container {
+    border: 3px solid #ddd; 
+    padding: 20px;
+    margin-bottom: 20px;
+    height: 380px;
+    width: 280px;
+    background-color: #f9f9f9; 
+    border-radius:10px; 
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.p-detail{
+    font-size: 12px;
+    margin-bottom: -1px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.bold-text {
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: -3px;
+  }
+  
+.p{
+    margin-top: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: normal;
+  }
+  
+.bold-text span {
+    font-weight: normal;
+  }

@@ -1,0 +1,20 @@
+<div class="popup-container" (click)="stopPropagation($event)">
+    <h6>Training Links</h6>
+  
+    <!-- Additional entries -->
+    <div *ngFor="let textBox of textBoxes; let i = index;">
+      <div class="row">
+        <div class="col-md-4">
+          <input type="text" class="text-name" [(ngModel)]="textBox.subTrName">
+        </div>
+        <div class="col-md-7">
+          <input type="text" class="text-link" [(ngModel)]="textBox.subTrLink">
+        </div>
+        <div class="col-md-1">
+          <span class="action-button del-img" (click)="removeTextBox(i)"></span>
+        </div>
+      </div>
+    </div>
+  
+    <span class="pi pi-plus" (click)="addTextBox()">+</span> Add More
+  </div>

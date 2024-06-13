@@ -1,0 +1,11 @@
+<div class="user-screen">
+    <app-login class="app-login"
+        (loginButtonClicked)="onLoginClick()"
+        (usernameChanged)="onUsernameChanged($event)" 
+        (passwordChanged)="onPasswordChanged($event)"
+        [errMessage]="errMessage" 
+        [loginData]="response"
+    >
+    </app-login>
+    <app-footer></app-footer>
+</div>

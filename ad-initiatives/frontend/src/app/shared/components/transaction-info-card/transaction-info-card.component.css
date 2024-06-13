@@ -1,0 +1,72 @@
+.main-info-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    color: var(--medium-gray);
+}
+.main-info-card p {
+    font-size: 14px;
+}
+
+.info-cards {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid var(--white);
+    padding: 1em;
+    border-radius: 1em;
+    background-color: var(--white);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+    gap: 0.5em;
+    height: 100%;
+}
+
+.info-cards img {
+    width: 3.5em;
+    height: 3.5em;
+}
+
+.info-card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: calc(50vw + 10em);
+    max-width: 25.843em;
+}
+
+.overdue {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.info-card-details strong{
+    font-size: 24px;
+}
+
+.training-desc {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+.training-desc p:last-child {
+    text-decoration: underline;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.training-desc p:hover:last-child{
+    opacity: 0.5;
+}
+
+.training-desc p:active:last-child {
+    transform: scale(0.95);
+}
+
+.main-pie-chart {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    margin-bottom: 0.8em;
+}

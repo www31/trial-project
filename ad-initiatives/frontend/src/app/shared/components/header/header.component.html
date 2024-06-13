@@ -1,0 +1,22 @@
+<div class="header">
+    <div class="icons">
+        <i class="pi pi-bell" 
+           style="color: var(--red)"
+        >
+        </i>
+        <img class="avatar" src="./../../../../assets/user-avatar.png" />
+        <div class="info">
+            <p>Doe, John Emmanuel</p>
+            <p>Srum Master</p>
+        </div>
+        <div class="dropdown">
+            <input type="checkbox" id="cb1" (change)="checkValue($event)"/>
+		    <label for="cb1"><img class="arrow-down" src="./../../../../assets/arrow-down.svg" /></label>
+            <ul [ngClass]="toggleClick()">
+                <li><a href="#" (click)="signOut()">Log out</a></li>
+            </ul>
+        </div>
+    </div>      
+    <div class="account-icon"></div>     
+</div>
+ 

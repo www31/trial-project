@@ -1,0 +1,30 @@
+<!ELEMENT configuration (#PCDATA|variable|timestamp|include|root|logger|appender)*>
+<!ELEMENT variable EMPTY>
+<!ATTLIST variable name NMTOKEN #REQUIRED>
+<!ATTLIST variable value NMTOKEN #REQUIRED>
+<!ELEMENT timestamp EMPTY>
+<!ATTLIST timestamp key NMTOKEN #REQUIRED>
+<!ATTLIST timestamp datePattern CDATA #REQUIRED>
+<!ELEMENT include EMPTY>
+<!ATTLIST include resource CDATA #REQUIRED>
+<!ELEMENT root (appender-ref)>
+<!ATTLIST root level NMTOKEN #REQUIRED>
+<!ELEMENT appender-ref EMPTY>
+<!ATTLIST appender-ref ref NMTOKEN #REQUIRED>
+<!ELEMENT logger EMPTY>
+<!ATTLIST logger name NMTOKEN #REQUIRED>
+<!ATTLIST logger level NMTOKEN #REQUIRED>
+<!ELEMENT appender (file,rollingPolicy,triggeringPolicy,encoder)>
+<!ATTLIST appender name NMTOKEN #REQUIRED>
+<!ATTLIST appender class NMTOKEN #REQUIRED>
+<!ELEMENT file (#PCDATA)>
+<!ELEMENT rollingPolicy (fileNamePattern,minIndex,maxIndex)>
+<!ATTLIST rollingPolicy class NMTOKEN #REQUIRED>
+<!ELEMENT fileNamePattern (#PCDATA)>
+<!ELEMENT minIndex (#PCDATA)>
+<!ELEMENT maxIndex (#PCDATA)>
+<!ELEMENT triggeringPolicy (maxFileSize)>
+<!ATTLIST triggeringPolicy class NMTOKEN #REQUIRED>
+<!ELEMENT maxFileSize (#PCDATA)>
+<!ELEMENT encoder (pattern)>
+<!ELEMENT pattern (#PCDATA)>

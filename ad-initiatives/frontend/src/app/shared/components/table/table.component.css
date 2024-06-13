@@ -1,0 +1,282 @@
+:host ::ng-deep.p-datatable-table tr:nth-child(even) {
+    background-color: #E8D8FF;
+}
+
+.p-header {
+    background-color: #D1C2F2;
+    align-items: center; /* Vertically center items within the header */
+    padding: 10px; /* Optional: Add padding for better appearance */
+}
+
+.pi-search{
+    margin-right: 10px;
+}
+
+:host ::ng-deep.p-tag {
+    background-color: transparent !important;
+    color: black;
+    border-color: #8C55D9 !important;
+    border: 1px;
+    border-style: solid;
+    font-weight: normal;
+}
+
+.action-button {
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+.edit-img {
+    background-image: url("/assets/img/Edit.png");
+    color: #8C55D9;
+    padding-left: 1em;
+    padding-right: 2em;
+}
+
+.del-img {
+    background-image: url("/assets/img/Delete.png");
+    color: #D54147;
+    padding-left: 1em;
+}
+
+.eye-img {
+    background-image: url("/assets/img/View.png");
+    color: #8C55D9;
+    background-color: transparent;
+    padding-right: 2em;
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Align items to the start of the container (left-aligned) */
+}
+
+.actions {
+    margin-left: auto; /* Pushes the button container to the right */
+    align-self: flex-end; /* Aligns the button container to the end of the flex container */
+}
+
+:host ::ng-deep.p-paginator .p-paginator-page:hover {
+    background-color: #8c55d9;
+    color: white;
+    border-radius: 15px;
+    margin-left: 5px;
+ }
+
+ :host ::ng-deep.p-paginator .p-paginator-page {
+    background-color: #f0e7fd;
+    color: #8c55d9;
+    border-radius: 15px;
+    margin-left: 5px;
+ }
+
+ :host ::ng-deep.p-ripple:hover {
+    background-color: #8c55d9;
+    color: white;
+    border-radius: 15px;
+    margin-left: 5px;
+ }
+
+ :host ::ng-deep.p-ripple {
+    background-color: #f0e7fd;
+    color: #8c55d9;
+    border-radius: 15px;
+    margin-left: 5px;
+ }
+
+.badge {
+    background: #F4F6F6;
+    border:1px solid #8C55D9;
+    color: #414145;
+  }
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    margin-right: 8px; /* Adjust the spacing between input and button as needed */
+}
+
+.search-button {
+    background-color: var(--purple); /* Change the background color as needed */
+    color: #fff; /* Change the text color as needed */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    opacity: 0.5;
+    /* background-color: #0056b3; Change the hover background color as needed */
+}
+
+.search-box-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 20px;
+    top: -1px;
+  }
+  
+  .search-container {
+    width: 300px;
+    position: relative;
+  }
+  
+  .search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-field {
+    width: 200px;
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+    line-height: normal;
+  }
+  
+  .filter-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom:-1px;
+    right: 7px;
+    top: 10;
+    height: 100%;
+  }
+  
+  .filter-button:focus {
+    outline: none;
+  }
+  
+  .filter-button i {
+    margin-top: 7px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px;
+    margin-bottom: 2px;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+  }
+  
+  li:hover {
+    background-color: #ddd;
+    cursor: pointer;
+  }
+  
+  .remove-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+  .remove-button:focus {
+    outline: none;
+  }
+  
+  .box-container {
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .done-button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    background-color: #8a2be2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  .done-button:hover {
+    opacity: 0.5;
+  }
+  
+  .filter-div {
+  height: 105%;
+  width: 110%;
+  right: 10px;
+  align-items: left !important;
+  }
+
+.icon-title i {
+    margin-left: 800px; /* Adjust spacing between icon and label as needed */
+ }
+
+ /* START DB024 */
+.approve-img {
+    background-image: url("/assets/img/approve.png");
+    color: #8C55D9;
+    height: 20px;
+    width: 20px;
+    padding-left: 10%;
+}
+
+.denied-img {
+    background-image: url("/assets/img/denied.png");
+    color: #D54147;
+    height: 20px;
+    width: 20px;
+    padding-left: 10%;
+}
+
+.view-img {
+    background-image: url("/assets/img/eye.png");
+    color: #D54147;
+    height: 20px;
+    width: 20px;
+    padding-left: 10%;
+}
+
+.p-header-left {
+    background-color: #D1C2F2;
+    align-items: center; /* Vertically center items within the header */
+    padding: 10px; /* Optional: Add padding for better appearance */
+    border-top-left-radius: 25px;
+}
+
+.p-header-right {
+    background-color: #D1C2F2;
+    align-items: center; /* Vertically center items within the header */
+    padding: 10px; /* Optional: Add padding for better appearance */
+    border-top-right-radius: 25px;
+}
+
+.certifications{
+  max-width: 300px;
+}
+
+/* END DB024 */

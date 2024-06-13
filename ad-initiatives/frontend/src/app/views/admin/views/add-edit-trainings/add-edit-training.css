@@ -1,0 +1,349 @@
+
+.popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(15, 15, 15, 0.5);
+  z-index: 1000;
+  height: 80%;
+  width: 780px; /* Adjust width as needed */
+  border-radius: 10px; /* Rounded corners */
+  overflow-y: auto;
+}
+
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Add some margin at the bottom */
+  }
+  
+  .popup-header h2 {
+    margin: 0;
+  }
+
+  .form-group{
+    flex: 1;
+  }
+  
+  .popup-content {
+    margin-bottom: 20px; /* Add some margin at the bottom */
+  }
+
+  .form-group-dates {
+    margin-bottom: 8px; /* Add some margin between form groups */
+    max-width: 33%;
+    float: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 4px; /* Add some margin between label and input */
+  }
+  
+  .popup-footer {
+    text-align: right;
+  }
+
+  .textbox{
+    border-radius: 5px;
+    height: 32px;
+    width: 300px;
+  }
+
+  .row-indented{
+    margin-left: 30px;
+  }
+
+  .textbox-dt{
+    border-radius: 5px;
+    height: 32px;
+    width: 212px;
+  }
+
+  .textbox-link{
+    border-radius: 5px;
+    height: 32px;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 8px;
+  }
+
+  .h4{
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+  }
+
+  .textbox-desc{
+    border-radius: 5px;
+    height: 70px;
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    margin-bottom: 2px;
+  }
+  
+  .popup-footer button:hover {
+    opacity: 0.5;
+  }
+
+  .btn-button-add {
+    width: 90px;
+    height: 35px;
+    margin-top: 15px;
+    background-color: rgb(119, 11, 119);
+    border: 2px solid gray;
+    border-radius: 5px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    cursor: pointer;
+  }
+
+  .btn-button-cancel {
+    width: 100px;
+    height: 35px;
+    margin-top: 15px;
+    margin-left: 10px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    cursor: pointer;
+  }
+
+  .btn-button-cancel:hover {
+    opacity: 50%;
+  }
+
+  .btn-button-add:hover {
+    opacity: 50%;
+  }
+
+  .add-more-popup {
+    height: 20px;
+    width: 20px;
+  }
+  
+  .form-group-tr {
+    margin-bottom: 8px; /* Add some margin between form groups */
+    max-width: 50%;
+    float:left;
+  }
+
+  .textbox-tr{
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    height: 32px;
+    width: 320px;
+  }
+
+  .dt{
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    height: 32px;
+    width: 200px;
+  }
+
+  .textbox-rd{
+    border-radius: 5px;
+    height: 25px;
+    margin-left: 4px;
+    margin-right: 4px;
+    width: 80px;
+  }
+
+  .textbox-tr{
+    border-radius: 5px;
+    height: 32px;
+    width: 100%;
+    float: left;
+  }
+
+  .form-check-input {
+    position: relative;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+  
+  .form-check-input:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .form-check-input:disabled {
+    pointer-events: none;
+    background-color: #e9ecef;
+  }
+  
+  .form-check-label {
+    margin-bottom: 0;
+    padding-left: 1.25rem;
+  }
+
+  .form-group-inner {
+    padding-left: 50px;
+    max-width: 100%; /* Add some margin between form groups */
+    float: left;
+  }
+
+  .textbox-inner{
+    border-radius: 5px;
+    height: 32px;
+    width: 212px;
+  }
+
+  .titleLbl{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: medium;
+    color: black;
+    padding-bottom: 5px;
+    padding-top: 5px;
+ }
+
+ .radio-label{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: small;
+  color: black;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.radio-btn{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.pi.pi-plus{
+  font-size: 18px;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5; /* or any other styling to visually indicate disabled state */
+}
+
+.disabled-div {
+  pointer-events: none;
+  opacity: 0.8; 
+}
+
+.selected-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.selected-tag {
+  background-color: #522a8b;
+  color: #fff;
+  position: relative;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.selected-tag:hover {
+  opacity: 50%;
+}
+
+.remove-tag-btn {
+  position: absolute; /* Position the button relative to its parent */
+  right: 0; /* Align the button to the right of the tag */
+  background-color: transparent; /* Make the button transparent */
+  border: none; /* Remove border */
+  color: #555; /* Set button color */
+  cursor: pointer;
+  outline: none; /* Remove default focus outline */
+}
+
+.remove-tag-btn:hover {
+  color: #000; /* Change button color on hover */
+}
+
+.trash {
+  background-image: url("../../../../../assets/delete.png");
+}
+
+.action-button {
+  cursor: pointer;
+  background-repeat: no-repeat;
+}
+
+.del-img {
+  background-image: url("/assets/img/Delete.png");
+  color: #D54147;
+  padding-left: 1em;
+  padding-bottom: 1em;
+}
+
+.multiselect .p-multiselect-label {
+  height: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #979292;
+  border-radius: 5px;
+  width: 675px;
+}
+
+.multiselect-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.multiselect-panel .singleselect-panel, ul{
+  padding: 0;
+  font-size: 12px;
+}
+
+.multiselect-panel input{
+  height: 2em;
+  width: 100%;
+}
+
+.p-multiselect-header {
+  padding: 1em;
+}
+
+.multiselect-panel li{
+  padding: 0 0 0.5em 1em;
+  display: flex;
+  align-items: center;
+}
+
+.multiselect-panel span{
+  font-size: 12px;
+}
+
+.p-multiselect-token{
+  font-size: 12px;
+  height: 100%;
+  margin-top: 5px;
+}
+
+.singleselect-panel {
+  padding: 0;
+  font-size: 12px;
+}
+
+.singleselect-panel li{
+  padding: 1em 0 0.5em 1em;
+  display: flex;
+  align-items: center;
+}

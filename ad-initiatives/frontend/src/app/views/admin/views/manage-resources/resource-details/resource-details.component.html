@@ -1,0 +1,31 @@
+<ng-container>
+    <div class="row">
+        <p-tabView [(activeIndex)]="activeIndex">
+            <p-tabPanel header="Personal Information" class="col-md-3" [selected]="true">
+                <app-view-personal-info [memberDtl]="memberDtl"></app-view-personal-info>
+            </p-tabPanel>
+            <p-tabPanel header="Skillset" class="col-md-3" [selected]="false">
+                <app-view-skillset [memberDtl]="memberDtl"></app-view-skillset>
+            </p-tabPanel>
+            <p-tabPanel header="Training" class="col-md-3" [selected]="false">
+                <app-view-training-details></app-view-training-details>
+            </p-tabPanel>
+            <p-tabPanel header="Certification" class="col-md-3 content-4" [selected]="false">
+                <div class="title">Current Certifications</div>
+                <app-view-certification></app-view-certification>
+            </p-tabPanel>
+        </p-tabView>
+        <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-6">
+                <app-custom-button 
+                    [label]="'Back'" 
+                    (buttonClicked)="goBack()" 
+                    [disabled]="activeIndex === 0" 
+                    class="btn-back"
+                    [backgroundColor]="'transparent'"
+                    [textColor]="'black'"/>
+            </div>
+        </div>
+    </div>
+</ng-container>

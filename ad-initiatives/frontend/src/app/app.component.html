@@ -1,0 +1,14 @@
+<div *ngIf="!isLoggedIn; else mainApp">
+    <app-user></app-user>
+</div>
+<ng-template #mainApp>
+    <div class="main-app">
+        <app-header class="header"></app-header>
+        <app-sidebar></app-sidebar>
+        <div class="main-app-body">
+            <!-- <app-body class="app-body"></app-body> -->
+            <router-outlet />
+        </div>
+        <app-footer class="footer"></app-footer>
+    </div>
+</ng-template>

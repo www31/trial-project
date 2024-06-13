@@ -1,0 +1,22 @@
+.main-screen {
+    width: calc(100% - 5rem);
+    min-width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    z-index: 0;
+    transition: all .5s ease;
+    margin-top: -1.4em !important;
+    padding: 1rem;
+ }
+
+.table{
+    min-width: 85%;
+    width: 50rem;
+}
+
+.title-label{    
+    font-weight: bold;
+    color: var(--purple);    
+    margin-top: 20px;
+    font-size: 40px;
+  }

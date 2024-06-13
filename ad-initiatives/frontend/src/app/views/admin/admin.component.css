@@ -1,0 +1,21 @@
+.admin{
+    width: 100vw; 
+    /* background-color: gray; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.header{
+    position: absolute;
+}
+
+.sample {
+    width: 20%;
+}
+
+.content-body{
+    width: 100%;
+    
+}

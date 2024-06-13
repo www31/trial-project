@@ -1,0 +1,64 @@
+<ng-container>
+    <div class="row main-screen">
+        <div class="col-md-12">
+            <div class="row">
+                <label class="subHeader">
+                    Reports | Trainings
+                </label>
+            </div>
+            <p-card class="contentCard table">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <div class="contentScreen">
+                            <div class="popup-container p-4 rounded table">     
+                                <div class="row" >
+                                    <div class="col-3">
+                                        <p class= "title-label">Program Name</p>
+                                        <!-- <span class="black-label">{{ data.productname}} </span> -->
+                                    </div>
+                                    <div class="col-3">
+                                        <p class= "title-label">Total Hours</p>
+                                        <!-- <span  class="black-label">{{data.trainingname}}</span> -->
+                                    </div>
+                                    <div class="col-3">
+                                        <p class= "title-label" >Date Added</p>
+                                        <!-- <span  class="black-label">{{data.certificationname}}</span> -->
+                                    </div>
+                                    <div class="col-3">
+                                        <p class= "title-label" >Due Date</p>
+                                        <!-- <span  class="black-label">{{data.certificationname}}</span> -->
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class= "title-label">Description</p>
+                                        <!-- <span class="black-label">{{data.duration}}</span> -->
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class= "title-label">Certification Link</p>
+                                        <!-- <span class="black-label">{{ data.startdate | date: 'shortDate' }}</span> -->
+                                    </div>
+                                </div>    
+                            </div>   
+                            <div class="row">
+                                <div class="col">
+                                    <p class= "title-label">Program Data</p>
+                                    <!-- <span class="black-label">{{ data.startdate | date: 'shortDate' }}</span> -->
+                                </div>
+                            </div>  
+                            <app-table 
+                                (view)="onView($event)"
+                                (edit)="onEdit($event)"
+                                (delete)="onDelete($event)"
+                                (sort)="onSort2($event)"
+                                (sortChange)="onSort($event)"
+                            ></app-table>
+                        </div>
+                    </div>
+                </div>
+            </p-card>
+        </div>
+    </div>
+</ng-container>

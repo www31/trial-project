@@ -1,0 +1,5 @@
+<p-accordion class="custom-accordion">
+  <p-accordionTab *ngFor="let header of headerTexts" [header]="header">
+      <ng-content></ng-content>
+  </p-accordionTab>
+</p-accordion>

@@ -1,0 +1,92 @@
+<ng-container>
+    <div class="row main-screen">
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <label class="subHeader">
+                    CERTIFICATION TRACKING
+                </label>
+            </div>
+            <div class="row">
+                <label class="subHeader">
+                </label>
+            </div>
+            <div class="col-md-12">
+                <!-- <div class="contentScreen"> -->
+                <div class="row">
+                    <form>
+                        <div class="form-group">
+                            <label for="textbox">Certification Name</label>
+                            <input class="search-input" pInputText type="text" [(ngModel)]="filters.certification_name"
+                                [ngModelOptions]="{standalone: true}" placeholder="Search keyword" />
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <form>
+                        <div class="form-group">
+                            <label for="textbox">Requester</label>
+                            <input class="search-input" pInputText type="text" [(ngModel)]="filters.requester"
+                                [ngModelOptions]="{standalone: true}" placeholder="Search keyword" />
+
+                        </div>
+                    </form>
+                </div>
+                <!-- </div> -->
+            </div>
+            <div class="col-md-12">
+                <!-- <div class="contentScreen"> -->
+                <div class="row">
+                    <form>
+                        <div class="form-group">
+                            <label for="textbox">Skill</label>
+                            <p-dropdown [options]="skillList" optionLabel="skill" [(ngModel)]="filters.skill"
+                                [ngModelOptions]="{standalone: true}" placeholder="Select a Skill" />
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <form>
+                        <div class="form-group">
+                            <label for="textbox">Status</label>
+                            <p-dropdown [options]="statusList" optionLabel="statusName" [(ngModel)]="filters.status"
+                                [ngModelOptions]="{standalone: true}" placeholder="Select a Status" />
+                        </div>
+                    </form>
+                </div>
+                <!-- </div> -->
+            </div>
+
+            <div class="cert-track-btn row">
+                <div class="col-md-4"></div>
+                <div class="col-md-5"></div>
+                <div class="col-md-3">
+                    <app-custom-button class="searchBtn" [label]="'Search'"
+                        (buttonClicked)="applyAllFilters()"></app-custom-button>
+                    <app-custom-button class="clearBtn" [label]="'Clear'"
+                        (buttonClicked)="clearFilters()"></app-custom-button>
+
+                </div>
+
+                <p-table [value]="filteredCertTrackingList" (onRowSelect)="onRowSelect($event)" selectionMode="single"
+                        [scrollable]="true" scrollHeight="400px" scrollWidth="100%">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>CERTIFICATION NAME</th>
+                            <th>SKILL</th>
+                            <th>REQUESTER</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-certTrackingList>
+                        <tr [pSelectableRow]="certTrackingList">
+                            <td>{{certTrackingList.certification_name}}</td>
+                            <td>{{certTrackingList.skill}}</td>
+                            <td>{{certTrackingList.requester}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+
+        </div>
+
+    </div>
+</ng-container>

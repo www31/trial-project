@@ -1,0 +1,56 @@
+<ng-container>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-1">
+                    <label>
+                        Skills:
+                    </label>
+                </div>
+                <div class="col-md-4">
+                    <p-dropdown [options]="skillOption" (onChange)="onDropdownChange($event.value)" placeholder="Select a Skill"></p-dropdown>
+                    <!-- <app-dropdown [options]="skillOption" (selectedOption)="onDropdownChange($event)"></app-dropdown> -->
+                </div>
+            </div>
+            <br>
+            <div style="padding-left: 6em;">
+                <div class="row" *ngIf="fiterOption=='Front End' || fiterOption=='All'">
+                    <div class="col-md-3" >
+                        <span class="badge">Front End Development</span>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="badges-container">
+                            <span class="badge" *ngFor="let feSkill of frontEnd"> {{feSkill.skillName}}</span>
+                            <!-- <span class="badge">React JS</span>
+                            <span class="badge">Vue JS</span>
+                            <span class="badge">Angular JS</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 20px;" *ngIf="fiterOption=='Back End' || fiterOption=='All'">
+                    <div class="col-md-3">
+                        <span class="badge">Back End Development</span>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="badges-container">
+                            <span class="badge" *ngFor="let beSkill of backEnd"> {{beSkill.skillName}}</span>
+                            <!-- <span class="badge">Java</span>
+                            <span class="badge">Spring</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 20px;" *ngIf="fiterOption=='Testing Tools' || fiterOption=='All'">
+                    <div class="col-md-3">
+                        <span class="badge">Testing Tools</span>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="badges-container">
+                            <span class="badge" *ngFor="let ttSkill of testingTools"> {{ttSkill.skillName}}</span>
+                            <!-- <span class="badge">Selenium</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

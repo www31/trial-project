@@ -1,0 +1,36 @@
+<div *ngIf="isOpen" class="main-dialog-box">
+    <ng-container *ngIf="msgStatus === 'success'">
+        <div class="message-dialog-box">
+            <img [src]="imgStatus" alt="" />
+            <p>{{ msg }}</p>
+        </div>
+        <app-custom-button [label]="'Ok'" (buttonClicked)="onCancelClose()"></app-custom-button>
+    </ng-container>
+    <ng-container *ngIf="msgStatus === 'error'">
+        <div class="message-dialog-box">
+            <img [src]="imgStatus" alt="" />
+            <p>{{ msg }}</p>
+        </div>
+        <app-custom-button [label]="'Ok'" (buttonClicked)="onCancelClose()"></app-custom-button>
+    </ng-container>
+    <ng-container *ngIf="msgStatus === 'options'">
+        <div class="message-dialog-box">
+            <img [src]="imgStatus" alt="" />
+            <p>{{ msg }}</p>
+        </div>
+        <div class="button-dialog-box">
+            <app-custom-button 
+                [label]="'No, thanks'" 
+                (buttonClicked)="onCancelClose()"
+                [backgroundColor]="'var(--white)'" 
+                [textColor]="'var(--purple)'"
+            >
+            </app-custom-button>
+            <app-custom-button 
+                [label]="'Yes, Please'" 
+                (buttonClicked)="onProceedClose()"
+            >
+            </app-custom-button>
+        </div>
+    </ng-container>
+</div>

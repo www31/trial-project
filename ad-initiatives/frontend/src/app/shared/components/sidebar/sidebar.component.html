@@ -1,0 +1,43 @@
+<div class="sidebar" >
+    <div class="logo-container">
+        <button class="logo">LD</button>
+        <div class="logo-text" >Tracker</div>
+        <!-- <button class="btn-close" *ngIf="collapsed" (click)="closeSidebar()">
+            <i class="pi pi-times"></i>
+        </button> -->
+    </div>
+    <div class="scrollwrap scrollwrap_delayed">
+        <ul class="sidebar-nav">
+            <li class="sidebar-nav-item" *ngFor="let data of navData">
+                <a class="sidebar-nav-link" (click)="handleClick(data)"
+                   *ngIf="data.items && data.items.length > 0"
+                >
+                    <i class="sidebar-link-icon" [class]="data.icon"></i>
+                    <span class="sidebar-link-text">{{data.label}}</span>
+                    <i class="menu-collapse-icon"
+                        [ngClass]="!data.expanded ? 'pi pi-caret-right' : 'pi pi-caret-down'"
+                    ></i>
+                </a>
+    
+                <a class="sidebar-nav-link" 
+                    *ngIf="!data.items || (data.items && data.items.length === 0)"
+                    [routerLink]="data.routeLink"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                >
+                <i class="sidebar-link-icon" [class]="data.icon"></i>
+                <span class="sidebar-link-text" >{{data.label}}</span>
+                </a>
+                <div *ngIf="data.items && data.items.length > 0">
+                    <app-sublevel-menu
+                        [data]="data"
+                        [collapsed]="collapsed"
+                        [multiple]="multiple"
+                        [expanded]="data.expanded"
+                    ></app-sublevel-menu>
+                </div>
+            </li>
+        </ul>
+    </div>
+   
+</div>

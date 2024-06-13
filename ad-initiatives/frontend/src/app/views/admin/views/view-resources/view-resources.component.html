@@ -1,0 +1,65 @@
+<div class="popup-overlay">
+ 
+    <div class="popup-container bg-light p-4 rounded">  
+      <div class="row" >
+        <div class="col-3">
+          <p class= "title-label">Name</p>
+          <span class="black-label">{{ data.memberName}} </span>
+        </div>
+        <div class="col-3">
+          <p class= "title-label">ID Number</p>
+          <span  class="black-label">{{data.employeeNum}}</span>
+        </div>
+        <div class="col-3">
+          <p class= "title-label" >Team</p>
+          <span  class="black-label">{{data.teamName}}</span>
+        </div>
+        <div class="col-3">
+            <p class= "title-label">Career Step</p>
+            <span class="black-label">{{data.careerStep}}</span>
+          </div>
+      </div>
+      <div class="row"> 
+        <div class="col-4">
+            <p class= "title-label">Role</p>
+            <span  class="black-label">{{data.roleName}}</span>
+        </div>       
+        <div class="col-4">
+          <p class= "title-label">Employment Status</p>
+          <span  class="black-label">{{data.isActive}}</span>
+        </div>       
+        <div class="col-4">
+          <p class= "title-label" >Project Status</p>
+          <span  class="black-label">{{data.preReq}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <p class= "title-label">With Certification</p>
+          <span class="black-label">{{ data.certFlag ? 'Yes' : 'No' }}</span>
+        </div>   
+      </div>      
+      <div class="row">
+        <div class="row">    
+            <p-tabView>
+                <p-tabPanel header="Certifications" class="col-md-2" [selected]="true">                   
+                    <app-table  [data]="completedList" [columns]="tableColumn"></app-table>  
+                </p-tabPanel>
+                <p-tabPanel header="Upskill Program Status" class="col-md-2" [selected]="false">
+                    <label class="subHeader2">
+                        UPSKILL PROGRAM STATUS
+                    </label> 
+                    <app-table  [data]="notcompletedList" [columns]="tableColumn2"></app-table> 
+                </p-tabPanel>          
+            </p-tabView>   
+        </div>     
+    </div>
+      <div class=" row backButton">   
+        <div class="col-md-9"></div>
+        <div class="col-md-2" style="text-align: right;">          
+          <app-custom-button [label]="'Download'"  (click)="onClickDownload()"></app-custom-button>
+      </div>     
+      <div class="col-md-1" style="text-align: right;">          
+        <app-custom-button [label]="'Back'"  (click)="onClickToggleB()"></app-custom-button>
+    </div>
+  </div>

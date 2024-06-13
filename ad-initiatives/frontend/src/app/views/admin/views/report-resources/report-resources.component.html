@@ -1,0 +1,32 @@
+<ng-container>
+    <div class="row main-screen">
+        <div class="col-md-12">
+            <div class="row">
+                <label class="subHeader" *ngIf="!isResource">
+                    Report
+                </label>
+                <label class="subHeader" *ngIf="isResource">
+                    Report | Resource
+                </label>
+            </div>
+            <div class="col-md-12 ">
+                <div class="contentScreen">
+                    <p-card class="contentCard table">
+                        <div class="row ">
+                            <label class="subHeader2"  *ngIf="!isResource">
+                                    Resource Data
+                            </label> 
+                            <app-table *ngIf="showViewResources" [data]="resourceList" [columns]="tableColumn" 
+                                (sortChange)="onSort($event)" (view)="onView($event)" 
+                                [showButtonResourceData]="true"
+                                (sort)="onSort2($event)"></app-table>
+                            <view-resources *ngIf="!showViewResources" [showViewResources]="showViewResources"
+                                (showViewResourcesChange)="toggleShowViewReources()" [data]="viewData" [resourceList] = "resourceList">
+                            </view-resources>                         
+                        </div>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

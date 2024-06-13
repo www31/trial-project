@@ -1,0 +1,173 @@
+<div class="main-add-user-form" *ngIf="isOpen" (click)="preventBackdropClick($event)">
+    <div class="add-user-form-details" (click)="preventBackdropClick($event)">
+        <p>Personal Information</p>
+        <ng-container *ngFor="let info of personalInfoInputs; let i = index">
+            <ng-container>
+                <div class="input" [ngClass]="
+                                                {
+                                                    'second': i === 0, 
+                                                    'third': i === 1,
+                                                    'fourth': i === 2,
+                                                    'fifth': i === 3,
+                                                    'sixth': i === 4,
+                                                    'seventh': i === 5,
+                                                    'eigth': i === 6,
+                                                    'ninth': i === 7,
+                                                    'tenth': i === 8,
+                                                    'eleven': i === 9,
+                                                    'twelve': i === 10,
+                                                    'thirteen': i === 11
+                                                }">
+                    <label>{{ info.label }} {{ info.isRequired ? '*' : '' }}</label>
+                    <input 
+                        *ngIf="info.element === 'input'" 
+                        [type]="info.type"  
+                        [placeholder]="info.placeholder"
+                        [ngModel]="resourceInfos[info.field]"
+                        (ngModelChange)="onInputChange(info.field, $event)"
+                    />
+                    <p-multiSelect
+                        *ngIf="info.element === 'multiselect-dropdown'"
+                        [options]="teamList" 
+                        [(ngModel)]="selectedTeamOption" 
+                        [placeholder]="info.placeholder"
+                        scrollHeight="250px" 
+                        display="chip"
+                        styleClass="multiselect"
+                        panelStyleClass="multiselect-panel"
+                        (ngModelChange)="onMultiSelectChange(info.field, $event)"                 
+                    >
+                        <ng-template let-group pTemplate="group">
+                            <div class="flex align-items-center">
+                                <span>{{ group.label }}</span>
+                            </div>
+                        </ng-template>
+                    </p-multiSelect>
+                    <p-dropdown 
+                        *ngIf="info.element === 'singleselect-dropdown'" 
+                        [options]="info.data" 
+                        styleClass="multiselect"
+                        panelStyleClass="singleselect-panel"
+                        [placeholder]="info.placeholder"
+                        (ngModelChange)="onSingleSelectChange(info.field, $event)"
+                        [(ngModel)]="info.field === 'gender' ? genderOption : statusOption" 
+                    >
+                    </p-dropdown>
+                </div>
+            </ng-container>
+        </ng-container>
+        <p>Technology Stack Skills</p>
+        <ng-container *ngFor="let info of techStackInfoInputs; let i = index">
+            <ng-container *ngIf="info.element === 'multiselect-dropdown'">
+                <div class="main-multiselect" [ngClass]="
+                                                {
+                                                    'fourteen': i === 0
+                                                }">
+                    <p-multiSelect
+                        [options]="skillList" 
+                        [(ngModel)]="selectedSkillOption" 
+                        [placeholder]="info.placeholder" 
+                        scrollHeight="250px" 
+                        display="chip"
+                        styleClass="multiselect"
+                        panelStyleClass="multiselect-panel"
+                        (ngModelChange)="onMultiSelectChange(info.field, $event)"
+                    >
+                        <ng-template let-group pTemplate="group">
+                            <div class="flex align-items-center">
+                                <span>{{ group.label }}</span>
+                            </div>
+                        </ng-template>
+                    </p-multiSelect>
+                </div>
+            </ng-container>
+        </ng-container>
+        <p>Current Certifications</p>
+        <div [formGroup]="form" class="certification-details">
+            <div formArrayName="items">
+                <div 
+                    *ngFor="let item of items.controls; let i = index" 
+                    [formGroupName]="i"
+                    class="certification-inputs"
+                >
+                    <input placeholder="name" formControlName="name" type="text"/>
+                    <app-calendar
+                        formControlName="calendar"
+                        class="calendar" 
+                    >
+                    </app-calendar>
+                    <div class="main-upload">
+                        <input
+                            type="file"  
+                            class="hidden upload"
+                            [id]="'files' + i"
+         
+                            (change)="onFileChange($event, i, items)"
+                        />
+                        <label [for]="'files' + i">File to be upload</label>
+                        <img src="../../../../../assets/upload-icon.svg"/>
+                    </div>
+                    <a (click)="deleteItem(i)">
+                        <img src="./../../../../../assets/close-icon.svg"/>
+                    </a> 
+                </div>
+            </div>
+        </div>
+        
+        <app-custom-button class="add-cert-button" 
+            [label]="'Add Certification'" 
+            [backgroundColor]="'var(--medium-purple)'"
+            (buttonClicked)="addItem()"
+        ></app-custom-button>
+        <div class="form-button">
+            <app-custom-button class="cancel-button" 
+            [label]="'Cancel'" 
+            [backgroundColor]="'var(--white)'"
+            [textColor]="'var(--medium-purple)'"
+            (buttonClicked)="onClosed()"
+        ></app-custom-button>
+        <app-custom-button class="save-button" 
+            [label]="'Save'" 
+            [backgroundColor]="'var(--medium-purple)'"
+            (buttonClicked)="saveResource()"
+        ></app-custom-button>
+        </div>
+
+        <app-dialog-box
+            [isOpen]="openDialog"
+            [msgStatus]="'error'"
+            [msg]="requiredFieldDialogMsg()"
+            [imgStatus]="'../../../../../assets/warning.svg'"
+            (dialogClosed)="closeDialog()"
+        >
+        </app-dialog-box>
+
+        <app-dialog-box
+            [isOpen]="isValidEmail"
+            [msgStatus]="'error'"
+            [msg]="isValidLPSTechEmailMsg()"
+            [imgStatus]="'../../../../../assets/warning.svg'"
+            (dialogClosed)="closeDialog()"
+        >
+        </app-dialog-box>
+
+        <app-dialog-box
+            [isOpen]="isAddSuccess"
+            [msgStatus]="'success'"
+            [msg]="'Resource successfully Added'"
+            [imgStatus]="'../../../../../assets/success.png'"
+            (dialogClosed)="closeDialog('add')"
+        >
+        </app-dialog-box>
+
+        <app-dialog-box
+            [isOpen]="isEditSuccess"
+            [msgStatus]="'success'"
+            [msg]="'Resource successfully Updated'"
+            [imgStatus]="'../../../../../assets/success.png'"
+            (dialogClosed)="closeDialog('edit')"
+        >
+        </app-dialog-box>
+        
+    </div>
+</div>

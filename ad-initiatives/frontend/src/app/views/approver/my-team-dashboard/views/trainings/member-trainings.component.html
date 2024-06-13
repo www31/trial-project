@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-4">
+        
+    </div>
+
+    <div class="col-md-8">
+        <app-custom-button [label]="'Not Yet Started'"class="button-active-notstarted" (buttonClicked)="onClickNotStarted()"></app-custom-button>
+        <app-custom-button [label]="'In Progress'"  class="button-active-inprogress" (buttonClicked)="onClickInProgress()"></app-custom-button>
+        <app-custom-button [label]="'Completed'" class="button-active-completed" (buttonClicked)="onClickCompleted()"></app-custom-button>
+        <app-custom-button [label]="'Overdue'" class="button-active-overdue" (buttonClicked)="onClickOverdue()"></app-custom-button>
+
+        <app-table [showSearchField]="false"  [columns]="tableColumn" [data]="trainingData" class="hide-header"></app-table>
+    </div>
+</div>

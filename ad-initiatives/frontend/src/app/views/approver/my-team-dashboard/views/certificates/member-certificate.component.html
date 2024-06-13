@@ -1,0 +1,6 @@
+<!-- <app-table [columns]="tableColumn" [showSearchField]="false" [data]="memberCertData"></app-table> -->
+    <div class="row align-items-start">
+        <div class="cert-box col-md-5" *ngFor="let md of memberCertData">
+            {{md.certName}}
+        </div>
+    </div>

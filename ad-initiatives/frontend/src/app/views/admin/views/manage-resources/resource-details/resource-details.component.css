@@ -1,0 +1,46 @@
+a {
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+    border-color: transparent;
+    font-weight: 500;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    
+}
+ 
+
+a:active, a:focus
+ {
+    color: #8C55D9; /* Example: Change text color to red */
+    border-bottom-color: #8C55D9;
+}
+
+#pn_id_4_content {    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    box-sizing: border-box;
+    width: 700px;
+    height: 300px;
+}
+
+div.title {
+    font-weight: bold;
+    font-size: 30px;
+    grid-row: 1 / 4;
+    grid-column: 1 / 2;
+}
+
+div#pn_id_4_content p {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+}
+
+app-view-certification {
+    grid-row: span 4;
+    grid-column: 2 / 2;
+    background: dodgerblue;
+}
+.btn-back {
+    float: right;
+}

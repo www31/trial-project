@@ -1,0 +1,28 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--white);
+    width: 100%;
+    padding: 1em;
+    border: 1px transparent;
+    color: var(--black); 
+}
+
+.footer.logged-in {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+    background-color: var(--purple);
+    width: 100%;
+    padding: 1em;
+    border: 1px transparent;
+    color: var(--white); 
+}
+
+.footer-main {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1.2em;
+}

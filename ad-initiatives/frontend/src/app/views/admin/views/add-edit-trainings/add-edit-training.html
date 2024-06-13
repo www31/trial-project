@@ -1,0 +1,166 @@
+<app-dialog-box [isOpen]="isOpen" [msgStatus]="'options'" [msg]="'Do you want to save this training?'"
+  [imgStatus]="'../../../../../assets/warning.svg'" (dialogClosed)="onCloseClick()" (dialogProceed)="proceedSave()">
+</app-dialog-box>
+<app-dialog-box [isOpen]="isSuccess" [msgStatus]="'success'" [msg]="'Successfully Saved Data!'"
+  [imgStatus]="'../../../../../assets/success.png'" (dialogClosed)="onCloseClick()">
+</app-dialog-box>
+<app-dialog-box [isOpen]="isError" [msgStatus]="'error'" [msg]="'Please fill in all the required fields!'"
+  [imgStatus]="'../../../../../assets/warning.svg'" (dialogClosed)="onCloseClick()">
+</app-dialog-box>
+
+<div class="popup-container" [class.disabled-div]="isOpen || isSuccess || isError || isAddMorePopupVisible">
+  <h4 class="h4"> Training Information </h4>
+  <div class="row">
+    <div class="col-md-4">
+      <label class="titleLbl">Training Name*</label>
+      <input type="text" class="textbox-tr" [(ngModel)]="trainingDetails.trainingName">
+    </div>
+    <div class="col-md-4">
+      <label class="titleLbl">Training Type*</label>
+      <select id="trainingtype" name="trainingtype" class="textbox-tr" [(ngModel)]="trainingDetails.trainingType">
+        <option value="Online"> Online </option>
+        <option value="Classroom"> Classroom </option>
+        <option value="Bootcamp"> Bootcamp </option>
+        <option value="Brownbag">Brownbag</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label class="titleLbl">Product Name*</label>
+      <input type="text" class="textbox-tr" [(ngModel)]="trainingDetails.productName">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <label class="titleLbl"> Start Date* </label>
+      <input type="date" class="dt" [(ngModel)]="trainingDetails.startDate">
+    </div>
+    <div class="col-4">
+      <label class="titleLbl"> Due Date*</label>
+      <input type="date" class="dt" [(ngModel)]="trainingDetails.dueDate">
+    </div>
+    <div class="col-4">
+      <label class="titleLbl"> Prerequisite </label>
+      <input type="text" class="textbox-tr" [(ngModel)]="trainingDetails.preReq">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <label class="titleLbl"> Description*</label>
+      <input type="text" class="textbox-desc" [(ngModel)]="trainingDetails.description">
+    </div>
+  </div>
+  <div class="col-12">
+    <span class="pi pi-plus" (click)="onaddMoreClicked()">+</span>
+    <label class="titleLbl">Add Training Link/s</label>
+  </div>
+  <div class="col-md-12">
+    <label class="titleLbl">Tags</label>
+  </div>
+<div>
+  <p-multiSelect
+  [options]="rolesList"
+  [(ngModel)]="selectedRoles"
+  [placeholder]="info.placeholder"
+  scrollHeight="250px"
+  display="chip"
+  styleClass="multiselect"
+  panelStyleClass="multiselect-panel"
+  [optionLabel]="'roleName'"
+  [maxSelectedLabels]="maxDisplay"
+  (onChange)="onMultiSelectChange(info.field, $event)"
+>
+</p-multiSelect>
+</div>
+  <div class="col-12">
+    <div class="form-check">
+      <label class="titleLbl">
+        <input class="form-check-input" type="checkbox" [(ngModel)]="trainingDetails.isRequired">
+        Proof of training is required
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <label class="titleLbl">
+        <input class="form-check-input" type="checkbox" id="certification" name="certification"
+          [(ngModel)]="trainingDetails.certification">
+        Training has certification
+      </label>
+    </div>
+  </div>
+  <div [class.disabled]="!trainingDetails.certification">
+    <div class="row" style="padding-left: 25px;">
+      <div class="col-md-6">
+        <label class="titleLbl"> Name of Certification</label>
+        <input type="text" id="certName" name="certName" class="textbox-tr" [(ngModel)]="trainingDetails.certName">
+      </div>
+      <div class="col-md-2">
+        <label class="titleLbl"> Duration</label>
+        <input type="text" id="duration" name="duration" class="textbox-tr" [(ngModel)]="trainingDetails.duration">
+      </div>
+      <div class="col-md-2">
+        <label class="titleLbl"> Fees</label>
+        <input type="text" id="fees" name="fees" class="textbox-tr" [(ngModel)]="trainingDetails.fee">
+      </div>
+      <div class="col-md-2">
+        <label class="titleLbl"> --</label>
+        <select id="currency" name="currency" class="textbox-tr" [(ngModel)]="trainingDetails.currency">
+          <option value=null></option>
+          <option value="USD"> USD </option>
+          <option value="PHP"> PHP </option>
+          <option value="AED"> AED </option>
+          <option value="EUR"> EUR </option>
+          <option value="HKD"> HKD </option>
+          <option value="JPY"> JPY </option>
+        </select>
+      </div>
+    </div>
+    <div class="row" style="padding-left: 25px;">
+      <div class="col-12">
+        <label class="titleLbl"> Certification Link</label>
+        <input type="text" class="textbox-link" id="certLink" name="certLink" class="textbox-tr"
+          [(ngModel)]="trainingDetails.certLink">
+      </div>
+    </div>
+    <div class="row" style="padding-left: 25px;">
+      <div class="col-12" style="margin-top: 10px;">
+        <label class="radio-label">
+          <input type="radio" id="radio1" name="trCondition" value="1" class="radio-btn"
+            [(ngModel)]="trainingDetails.trCondition" [checked]="trainingDetails.trCondition === 1">
+          Company will shoulder the expenses and the resource will be bonded for
+          <input type="text" class="textbox-rd" [disabled]="trainingDetails.trCondition != 1"
+            [(ngModel)]="trainingDetails.trConditionValue"> months.
+        </label><br>
+
+        <label class="radio-label">
+          <input type="radio" id="radio2" name="trCondition" value="2" class="radio-btn"
+            [(ngModel)]="trainingDetails.trCondition" [checked]="trainingDetails.trCondition === 2">
+          Company will reimburse the expenses upon successful completion of the certification and the resource will be
+          bonded for
+          <input type="text" class="textbox-rd" [disabled]="trainingDetails.trCondition != 2"
+            [(ngModel)]="trainingDetails.trConditionValue"> months.
+        </label><br>
+
+        <label class="radio-label">
+          <input type="radio" id="radio3" name="trCondition" value="3" class="radio-btn"
+            [(ngModel)]="trainingDetails.trCondition" [checked]="trainingDetails.trCondition === 3">
+          Company will not reimburse the expenses, and the employee will not be bonded for taking the certification.
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+    </div>
+    <div class="col-md-2">
+      <button class="btn-button-cancel" (click)="closePopup()"> Cancel </button>
+    </div>
+    <div class="col-md-2">
+      <button class="btn-button-add" (click)="onSaveClick()"> Save </button>
+    </div>
+  </div>
+</div>
+<app-popup *ngIf="isAddMorePopupVisible" [textBoxes]="trainingLinksLists" [trainingDetails]="trainingDetails"
+  (close)="closeAddMorePopup()">
+</app-popup>

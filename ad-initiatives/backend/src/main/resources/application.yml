@@ -1,0 +1,57 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:sqlserver://127.0.0.1:1433;instanceName=MSSQLSERVER;databaseName=LDDBDEV;encrypt=true;trustServerCertificate=true
+    username: LPS
+    password: LPS
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: lpshris1@gmail.com
+    password: xcmhecferfilhhmi
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            
+      verify:
+         host: http://localhost:80
+         login: http://localhost:4200/login
+  cors:
+      origins: http://localhost:4200
+      methods: "GET,\ POST,\ PUT,\ DELETE,\ OPTIONS"
+      headers: "Content-Type,\ Authorization"
+upload:
+  files:
+    path: C:/temp/files/
+    extensions: jpg, jpeg, png, gif
+
+servlet:
+  multipart:
+    max-file-size: 1000MB
+    max-request-size: 2000MB
+
+server:
+  port: 80
+  tomcat:
+    max-swallow-size: 1000MB
+
+management:
+  server:
+    port: 9191
+    endpoint:
+      shutdown: 
+        enabled: true
+    web:
+      exposure:
+        include: "*"

@@ -1,0 +1,74 @@
+.button-inactive-notstarted .next-button {
+    background-color: white !important;
+    border: 0px !important;
+    color: #522a8b !important;
+    margin-right: 20px !important;
+    margin-bottom: 10px !important;
+    border-radius: 25px !important;
+}
+
+.button-active-notstarted .next-button {
+    background-color: #522a8b !important;
+    border: 0px !important;
+    color: white !important;
+    margin-right: 20px !important;
+    margin-bottom: 10px !important;
+    border-radius: 25px !important;
+}
+
+/* inprogress */
+.button-inactive-inprogress .next-button {
+    background-color: white !important;
+    border: 0px !important;
+    color: #522a8b !important;
+    margin-right: 20px !important;
+    margin-bottom: 10px !important;
+    border-radius: 25px !important;
+}
+
+.button-active-inprogress .next-button {
+    background-color: #522a8b !important;
+    border: 0px !important;
+    color: white !important;
+    margin-right: 20px !important;
+    margin-bottom: 10px !important;
+    border-radius: 25px !important;
+}
+
+/* completed */
+.button-inactive-completed .next-button {
+    background-color: white !important;
+    border: 0px !important;
+    color: #522a8b !important;
+    margin-right: 20px !important;
+    margin-bottom: 10px !important;
+    border-radius: 25px !important;
+}
+
+.button-active-completed .next-button {
+    background-color: #522a8b !important;
+    border: 0px !important;
+    color: white !important;
+    margin-right: 20px !important;
+    margin-bottom: 10px !important;
+    border-radius: 25px !important;
+}
+
+/* overdue */
+.button-inactive-overdue .next-button {
+    background-color: white !important;
+    border: 0px !important;
+    color: #522a8b !important;
+    margin-right: 20px !important;
+    margin-bottom: 10px !important;
+    border-radius: 25px !important;
+}
+
+.button-active-overdue .next-button {
+    background-color: #522a8b !important;
+    border: 0px !important;
+    color: white !important;
+    margin-right: 20px !important;
+    margin-bottom: 10px !important;
+    border-radius: 25px !important;
+}

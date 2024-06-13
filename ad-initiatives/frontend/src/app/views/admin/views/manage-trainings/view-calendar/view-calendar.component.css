@@ -1,0 +1,84 @@
+h2 {
+    margin: 0;
+    font-size: 50px !important;
+    color: #522A8B ;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+ul {
+    margin: 0;
+    padding: 0 0 0 1.5em;
+}
+
+li {
+    margin: 1.5em 0;
+    padding: 0;
+}
+
+b {
+    /* used for event dates/times */
+    margin-right: 3px;
+}
+
+a{
+    color: black ;
+    font-size: medium;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: normal;
+}
+
+.fc-daygrid-day-number{
+    font-weight: normal;
+}
+
+i{
+    white-space: normal;
+}
+
+.fc .fc-button-primary {
+    background-color: #8C55D9 !important;
+    margin: 0.5em;
+    font-size: medium;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 6px !important;
+    font-family: "Montserrat", sans-serif;
+    border-color: #522A8B;
+}
+
+.fc-h-event{ 
+    background-color: #8C55D9 !important;
+}
+
+.fc-v-event {
+    background-color: #8C55D9;
+    border: 1px solid black;
+    display: block;
+}
+
+.demo-app {
+    display: flex;
+    min-height: 100%;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.demo-app-main {
+    flex-grow: 1;
+    padding: 1em;
+}
+
+.fc {
+    /* the calendar root */
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.panelCalendar {
+    height: 100%;
+}
+
+.no-header .ui-panel-titlebar {
+    display: none !important;
+}

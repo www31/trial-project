@@ -1,0 +1,155 @@
+.login-component {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #fff;
+    height: 400px;
+    max-width: 700px;
+    max-height: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.container-left {
+    background-color: var(--dark-blue);
+    background: linear-gradient(to right, #5c6bc0, var(--dark-blue));
+    color: #fff;
+    border-radius: 10px 0 0 10px;
+    top: 0;
+    height: 100%;
+    width: 50%;
+}
+
+.container-left img {
+    width: 100%;
+    object-fit: fill;
+    margin: 5% 0 0 -15%;
+}
+
+.container-right form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+    font-size: x-small;
+}
+
+.container-right input {
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 90%;
+    outline: none;
+    block-size: fit-content;
+}
+
+.name-block,
+.password-block,
+.first-input,
+.second-input {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 90%;
+    height: 40px;
+}
+
+.container-right .eyeicon-1,
+.eyeicon-2,
+.eyeicon-3 {
+    position: absolute;
+    top: 35%;
+    right: 15%;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+img,
+span > img, 
+div > span > img {
+    width: 10px;
+}
+
+h2,
+label,
+p.info {
+    color: var(--dark-blue);
+}
+
+.container-right p {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    margin: 10px 0;
+}
+
+.container-right a {
+    color: var(--dark-blue);
+    font-size: 10px;
+    text-decoration: none;
+    margin: 0 0 20px;
+}
+
+.first-input input {
+    width: 90%;
+    height: 25px;
+}
+
+.popup-container {
+    padding: 1rem;
+}
+
+.popup-container p {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-container button {
+    border: none;
+    padding: 0.625rem;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    width: 10rem;
+    margin: 0.2rem;
+}
+
+.login-component>* {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.login-component input {
+    outline: none;
+    padding: 0.3em;
+    border: 1px solid var(--purple);
+    border-radius: 0.2em;
+}
+
+.error-message {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: var(--red);
+    max-width:300px;
+    word-wrap:break-word;
+}
+
+@media screen and (max-width: 450px) {
+    .container-left {
+        display: none;
+    }
+
+    .container-right {
+        width: 100%;
+    }
+}

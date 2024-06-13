@@ -1,0 +1,73 @@
+<div class="popup-overlay">
+  
+    <div class="popup-container bg-light p-4 rounded">     
+      <div class="popup-header d-flex justify-content-between align-items-center mb-3">   
+      <button type="btn-close" class="btn btn-secondary" (click)="onClickToggleB()">Back</button>       
+      </div>
+      <div class="row" >
+        <div class="col-4">
+          <p class= "title-label">Product Name</p>
+          <span class="black-label">{{ data.productName}} </span>
+        </div>
+        <div class="col-4">
+          <p class= "title-label">Training Name</p>
+          <span  class="black-label">{{data.trainingName}}</span>
+        </div>
+        <div class="col-4">
+          <p class= "title-label" >Type of Certification</p>
+          <span  class="black-label">{{data.certName}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <p class= "title-label">Total Hours</p>
+          <span class="black-label">{{data.duration}}</span>
+        </div>
+        <div class="col-4">
+          <p class= "title-label">Type</p>
+          <span  class="black-label">{{data.trainingType}}</span>
+        </div>
+        <div class="col-4">
+          <p class= "title-label" >Prerequisite</p>
+          <span  class="black-label">{{data.preReq}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <p class= "title-label">Start Date</p>
+          <span class="black-label">{{ data.startDate | date: 'shortDate' }}</span>
+        </div>
+        <div class="col-4">
+          <p class= "title-label">Due Date</p>
+          <span  class="black-label">{{ data.dueDate | date: 'shortDate' }}</span>
+        </div>
+        <div class="col-4">
+          <p class= "title-label">Certification Expiry Date</p>
+          <span  class="black-label">{{ data.expiryDate !== null && data.expiryDate !== 'null' ? (data.expiryDate | date: 'shortDate') : 'null' }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <p class= "title-label">Fees</p>
+          <span class="black-label">{{data.fee + data.currency}}</span>
+        </div>
+        <div class="col-4">
+          <p class= "title-label">Roles</p>
+          <span  class="black-label">{{data.trainingTags}}</span>
+        </div>
+        <div class="col-4">
+          <p class= "title-label">Required Training</p>
+          <span  class="black-label">{{data.description}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <p class= "title-label">Training Link</p>
+          <span class="black-label">{{data.trainingLink}}</span>
+        </div>       
+        <div class="col-6">
+          <p class= "title-label">Certification Link</p>
+          <span  class="black-label">{{data.certLink}}</span>
+        </div>
+      </div>     
+  </div>

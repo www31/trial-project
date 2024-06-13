@@ -1,0 +1,8 @@
+<div class="popup-wrapper">
+    <section class="popup" #popup>
+      <ng-content></ng-content>
+    </section>
+  
+    <div class="popup-overlay" #overlay (click)="onClose()"></div>
+  </div>
+  

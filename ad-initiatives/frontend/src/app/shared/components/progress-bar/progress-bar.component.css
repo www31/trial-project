@@ -1,0 +1,22 @@
+.progress-bar-container {
+    width: 500px;
+    height: 20px;
+    
+    background-color: #FFFFFF; 
+    border: solid #000000;
+    border-width: 1px 1px; 
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #FFFFFF, #8C55D9); 
+  }
+  
+
+  /* your-component.component.css */
+.custom-progress-bar .ui-progressbar-value {
+  background-image: linear-gradient(to right, #FFFFFF, #8C55D9);
+} 

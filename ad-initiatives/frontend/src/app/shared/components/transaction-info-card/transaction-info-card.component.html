@@ -1,0 +1,43 @@
+<ng-container *ngFor="let info of trainingInfo">
+    <div class="main-info-card">
+        <div class="info-cards"  
+        [ngStyle]="{
+            'background-color': statusColor(info.status).bgColor,
+            'border': statusColor(info.status).borderColor
+          }"
+            >
+          <!-- <img [src]="info.imgSrc" /> -->
+          <div class="info-card-details" *ngIf="isArray()">
+            <p>Status: {{ info.status.toUpperCase() }}</p>
+            <div class="training-desc">
+                <div class="main-pie-chart"> 
+                    <strong>{{ info.name }}</strong>
+                    <ng-container *ngIf="info.status === 'In Progress'">
+                        <p-chart width="75" height="75" type="doughnut" [data]="getChartDate(info.progressNumber)" [options]="options"></p-chart>
+                    </ng-container>
+                </div>
+                <ng-container *ngIf="expandedItemId === info.id">
+                    <p>Description: {{ info.description }}</p>
+                    <p>Remarks: {{ info.remarks }}</p>
+                </ng-container>
+                <p *ngIf="seeMore == false" (click)="showMore(info.id)">
+                    {{ expand(info.id) }}
+                </p>
+            </div>
+            <div>
+                <p>Started Date: {{ info.date_started }}</p>
+                <p *ngIf="info.status === 'In Progress'">Due date: {{ info.due_date }}</p>
+                <p *ngIf="info.status === 'Completed'">Completed date: {{ info.date_completed }}</p>
+            </div>
+            <div *ngIf="info.status === 'Overdue'" class="overdue">
+                <p>Target date: {{ info.target_date }}</p>
+                <p>Estimate hours: {{ info.estimated_hours}}</p>
+            </div>
+          </div>
+          <div *ngIf="!isArray()">
+            {{ info }}
+          </div>
+        </div>
+    </div>
+</ng-container>
+

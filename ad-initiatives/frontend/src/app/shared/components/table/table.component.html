@@ -1,0 +1,118 @@
+<p-table #dt1 
+    [value]="data" 
+    [columns]="columns"
+    styleClass="p-datatable-striped"
+    (sort)="onSort($event)" 
+    [tableStyle]="{ 'min-width': '50rem' }"
+    [paginator]="true" [rows]="5"> 
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <div class="search"> 
+            <i class="pi pi-search"></i>
+            <span class="p-input-icon-left ml-auto">
+                <input pInputText type="text" [(ngModel)]="globalFilter" placeholder="Search Keyword" />
+            </span>
+            </div>
+            <div *ngIf="showButtonManageTrainings" class="actions" > 
+                <app-custom-button label="Calendar" margin="5px" icon="pi pi-calendar" (buttonClicked)="addCalendar()"></app-custom-button>
+                <app-custom-button label="Import" margin="5px" icon="pi pi-file-import"></app-custom-button>
+                <app-custom-button label="Add" margin="5px" icon="pi pi-plus" (buttonClicked)="addTraining()"></app-custom-button>
+            </div>
+            <div *ngIf="showButtonManageResources" class="actions" > 
+                <app-custom-button label="Import" margin="5px" icon="pi pi-file-import"></app-custom-button>
+                <app-custom-button label="Export" margin="5px" icon="pi pi-file-export"></app-custom-button>
+                <app-custom-button label="Add Resource" margin="5px" (buttonClicked)="addResourceButton()"></app-custom-button>
+                <app-custom-button label="Set Training" margin="5px" (buttonClicked)="setTrainigButton()"></app-custom-button>
+            </div>
+            <div *ngIf="showButtonReportTrainings" class="actions" > 
+                <app-custom-button label="Download" margin="5px" icon="pi pi-file-import"></app-custom-button>
+            </div>
+            <div *ngIf="showButtonResourceData" class="actions" > 
+                <app-custom-button label="Download" margin="5px" icon="pi pi-file-import"></app-custom-button>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngIf="showButtonManageResources" class="p-header">
+                <p-tableHeaderCheckbox>
+                </p-tableHeaderCheckbox>
+            </th>
+            <th *ngIf="showButtonResourceData" class="p-header">
+                <p-tableHeaderCheckbox>
+                </p-tableHeaderCheckbox>
+            </th>
+            <!-- <th *ngFor="let col of columns" class="p-header" [pSortableColumn]="col.field">
+                {{col.header}}
+                <p-sortIcon></p-sortIcon>
+            </th> -->
+            <ng-container *ngIf="!showCertApprovalBtn">
+                <th *ngFor="let col of columns" class="p-header" [pSortableColumn]="col.field" [style.width]="col.width ? col.width : null">
+                 {{ col.header }}
+                <p-sortIcon></p-sortIcon>
+                </th>
+            </ng-container>
+
+            <ng-container *ngIf="showCertApprovalBtn">
+                <th class="p-header-left"pSortableColumn="certName" (sort)="onSort($event)" >
+                    CERTIFICATION           
+                    <p-sortIcon></p-sortIcon>
+                </th>
+                <th class="p-header-right" style="width: 300px;"></th>
+            </ng-container>
+            
+            <th *ngFor="let col of columns && showButtonResourceDataTable" class="p-header" [pSortableColumn]="col.field" 
+                [style.width]="col.width ? col.width : null">
+                 {{ col.header }}
+                    <p-sortIcon></p-sortIcon>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr *ngIf="matchesGlobalFilter(rowData)">
+            <td *ngIf="showButtonManageResources" class="table-multiple-checkbox">
+                <p-tableCheckbox [value]="rowData">
+                </p-tableCheckbox>
+            </td>
+            <td *ngIf="showButtonResourceData" class="table-multiple-checkbox">
+                <p-tableCheckbox [value]="rowData">
+                </p-tableCheckbox>
+            </td>
+            <ng-container *ngFor="let col of columns">
+                <td *ngIf="col.field !== 'tags' && col.field !== 'trainings' && col.field !== 'certifications' && col.field !== 'actions'; else tags">
+                    {{ rowData[col.field] }}
+                </td>
+                <ng-template #tags>
+                    <td *ngIf="col.field == 'tags'">
+                        <p-tag *ngFor="let tag of rowData[col.field]" class="p-mr-1">{{tag}}</p-tag>
+                    </td>
+                </ng-template>               
+                <td *ngIf="col.field == 'trainings'">
+                    <ng-container *ngIf="hasTrainings(rowData); else button">
+                        <span *ngFor="let training of rowData.trainings" class="p-mr-1">{{training}}</span>
+                    </ng-container>
+                    <ng-template #button>
+                        <app-custom-button label="Set Training"></app-custom-button>
+                    </ng-template>
+                </td>
+                <td *ngIf="col.field == 'certifications'" class="certifications">
+                        <span *ngFor="let certification of rowData[col.field]" class="badge">{{certification}}</span>
+                </td>                             
+                <td *ngIf="col.field == 'actions' && !showButtonResourceData && !showCertApprovalBtn">
+                    <span class="action-button eye-img" (click)="onView(rowData)"></span>
+                    <span class="action-button edit-img" (click)="onEdit(rowData)"></span>
+                    <span class="action-button del-img" (click)="onDelete(rowData)"></span>
+                </td>
+                <td *ngIf="col.field == 'actions' && showButtonResourceData">
+                    <span class="action-button eye-img" (click)="onView(rowData)"></span>                
+                </td>
+                <td *ngIf="col.field == 'actions' && showCertApprovalBtn" style="text-align: center !important;">
+                    <span class="action-button view-img"></span>
+                    <span class="action-button approve-img"></span>
+                    <span class="action-button denied-img"></span>
+                </td>
+              
+            </ng-container>
+        </tr>
+    </ng-template>
+</p-table>

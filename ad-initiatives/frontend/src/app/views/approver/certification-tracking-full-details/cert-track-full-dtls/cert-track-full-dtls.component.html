@@ -1,0 +1,80 @@
+<ng-container>
+    <div class="row main-screen">
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <label class="subHeader">
+                    Certification tracking full table details
+                </label>
+            </div>
+            <div class="row">
+                <label class="subHeader">
+                </label>
+            </div>
+            <div class="col-md-12">
+
+            </div>
+
+
+            <div class="row">
+                <p-table [value]="[certTrackFDtls]" [scrollable]="true" scrollHeight="400px" scrollWidth="100%">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>CERTIFICATION NAME</th>
+                            <th>SKILL</th>
+                            <th>REQUESTER</th>
+                            <th>DATE REQUESTED</th>
+                            <th>LAST UPDATED BY</th>
+                            <th>LAST UPDATED DATE</th>
+                            <th>STATUS</th>
+                            <th></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-certTracking>
+                        <tr>
+                            <td>{{certTracking.certification_name}}</td>
+                            <td>{{certTracking.skill}}</td>
+                            <td>{{certTracking.requester}}</td>
+                        </tr>
+                            <div class="row details">
+                                <div class="col-md-3">
+                                    <strong>Certification Name</strong><br>
+                                    <strong>Certification Details</strong><br><br>
+                                    <strong>Skill</strong><br>
+                                    <strong>Training Module</strong><br>
+
+                                </div>
+                                <div class="col-md-9">
+                                    {{certTracking.certification_name}}<br>
+                                    {{certTracking.certification_details}}<br>
+                                    {{certTracking.skill}}<br>
+                                </div>
+                            </div>
+
+                            <div class="row details">
+                                <div class="col-md-3">
+
+                                    <strong>Training Completed</strong><br>
+                                    <strong>Last Approved By</strong><br>
+                                    <strong>Next Approver</strong><br>
+                                </div>
+                                <div class="col-md-3">
+                                    <br>
+                                    <br>
+                                </div>
+                                <div class="col-md-3">
+                                    <br>
+                                    <strong>Training Completion Date</strong><br>
+                                </div>
+                                <div class="col-md-3">
+                                    <br>
+                                    {{certTracking.training_completion_date}}<br>
+                                </div>
+                            </div>
+                    </ng-template>
+                </p-table>
+            </div>
+
+        </div>
+
+    </div>
+</ng-container>

@@ -1,0 +1,46 @@
+<ng-container>
+    <div class="row main-screen">
+        <div class="col-md-12">
+            <div class="row">
+                <label class="subHeader" *ngIf="!isResource">
+                    Manage Resources
+                </label>
+                <label class="subHeader" *ngIf="isResource">
+                    Resource Details
+                </label>
+            </div>
+            <div class="col-md-12 ">
+                <div class="contentScreen">
+                    <p-card class="contentCard table">
+                        <div class="row " *ngIf="!isResource showButtonManageResources">
+                            <app-table 
+                                [data]="resourceList" 
+                                [columns]="tableColumn"
+                                (view)="onView($event)"
+                                (edit)="onEdit($event)"
+                                (delete)="onDelete($event)"
+                                (sort)="onSort2($event)"
+                                (sortChange)="onSort($event)"
+                                [showButtonManageResources]="true"
+                                (addResourceButtonClick)="addResource()"
+                                (setTrainingButtonClick)="showSetTrainingMultipleUserForm()"
+                                (edit)="onEdit($event)" 
+                            ></app-table>
+                        </div>
+                        <div class="row" *ngIf="isResource">
+                            <app-resource-details [memberDtl]="selectedMemberDtl"></app-resource-details>
+                        </div>
+                        <div class=" row backButton" *ngIf="isResource">
+                            <div class="col-md-10"></div>
+                            <div class="col-md-2" style="text-align: right;">
+                                <app-custom-button [label]="'back'" (buttonClicked)="backManageResource()"></app-custom-button>
+                            </div>
+                        </div>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+        <app-add-user-form [resourceCertifications]="resourceCertifications" [resource]="resourceInfos" [isOpen]="isOpen" [action]="action" (isOpenChange)="isOpenChange($event)"></app-add-user-form>
+        <app-set-training-form  [isSetTrainingOpen]="isSetTrainingOpen" [actionTypeForSetTraining]="actionTypeForSetTraining" (isSetTrainingOpenChange)="isSetTrainingOpenChange($event)"></app-set-training-form>
+    </div>
+</ng-container>

@@ -1,0 +1,63 @@
+<ng-container>
+    <div class="row main-screen">
+        <view-member-details *ngIf="isPopupVisible" (close)="closePopup()" [selectedData]="selectedData"></view-member-details>
+
+        <div class="col-md-12">
+            <div class="row">
+                <label class="header-black">
+                    TEAM DASHBOARD
+                </label>
+            </div>
+
+            <div class="row">
+                
+                <div class="col-md-5">
+                    <!-- TRAINING STATUS -->
+                    <div class="row">
+                        <label class="subTitle-black">TRAINING STATUS</label>
+                    </div>
+                    <!-- TRAINING STATUS -->
+
+                    <!-- CERTIFICATION STATUS -->
+                    <div class="row">
+                        <label class="subTitle-black">CERTIFICATION STATUS</label>
+                    </div>
+                    <!-- CERTIFICATION STATUS -->
+                </div>
+                
+
+                <!-- SEARCH -->
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class ="col-md-12 text-center">
+                            <input type = "text" id="searchfldName" name="searchfldName" class="textbox-tr" (input)="onInputKeyChange($event)">
+                        </div>
+                    </div>
+
+                    <div class="row row justify-content-md-center">
+                        <div class ="col-md-7 divMemberResult">
+                            <div class="userDetail-box" *ngFor="let ud of filteredUserData"> 
+                                
+                                <div class="row rowMemberDetails align-items-center" (click)="onViewMemberDetails(ud)">
+                                    <div class ="col-md-3 photoBoxPadding">
+                                        <div class="photoBG"></div>
+                                    </div>
+
+                                    <div class ="col text-center">
+                                        <div class="fldFullname">{{ud.fullName}}</div>
+                                        <div class="divRole">{{ud.roleName}}</div>
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- SEARCH -->
+
+            </div>
+        </div>
+    </div>
+</ng-container>

@@ -1,0 +1,26 @@
+<div class="filter-div">
+<div class="search-box-container">
+  <div class="search-container">
+    <div class="search-wrapper">
+      <input type class="search-field" [value]="searchQuery" placeholder="Set Columns" (input)="filterItems($event)">
+      <button class="filter-button" (click)="toggleBoxContainer()">
+        <i class="pi pi-filter"></i>
+      </button>
+    </div>
+    <ul *ngIf="searchQuery !== ''">
+      <li *ngFor="let result of searchResults" (click)="addToBox(result)">{{ result }}</li>
+      <li *ngIf="searchResults.length === 0">No Result/s Found.</li>
+    </ul>
+  </div>
+  <div class="box-container" *ngIf="showBoxContainer">
+    <ul>
+      <li *ngFor="let result of selectedItems; let last = last">
+        <span>{{ result }}</span>
+        <button class="remove-button" (click)="removeFromBox(result)"><i class="pi pi-times"></i></button>
+      </li>
+      <li *ngIf="selectedItems.length === 0">No Item/s Selected.</li>
+    </ul>
+    <button class="done-button" (click)="onDone()">Done</button>
+  </div>
+</div>
+</div>

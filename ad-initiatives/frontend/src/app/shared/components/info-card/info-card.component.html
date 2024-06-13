@@ -1,0 +1,28 @@
+<!-- <div class="main-info-card">
+    <img src="../../../../assets/Oracle_Professional_Badge.png" />
+    <ng-container *ngIf="isArrayLabel()">
+        <div>
+            <div class="info-card-details" *ngFor="let item of label; let i = index">
+                <p [class.first-child]="i === 0">{{ item }}</p>                                                  
+            </div> 
+        </div>                                     
+    </ng-container>
+    <ng-container *ngIf="!isArrayLabel()">
+        <div>
+            {{ label }}
+        </div>
+    </ng-container>                             
+</div> -->
+<div class="main-info-card" *ngFor="let info of certificationInfo;">
+    <div class="info-cards">
+      <img [src]="info.imgSrc" />
+      <div class="info-card-details" *ngIf="isArray()">
+        <strong>{{ info.name }}</strong>
+        <p>{{ info.date }}</p>
+        <p>{{ info.location }}</p>
+      </div>
+      <div *ngIf="!isArray()">
+        {{ info }}
+      </div>
+    </div>
+</div>

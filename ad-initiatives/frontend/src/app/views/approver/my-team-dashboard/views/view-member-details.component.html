@@ -1,0 +1,135 @@
+<div class="popup-container">
+
+  <div class="row">
+    <div class="col-md-2" style="padding-left: 2%;">
+      <p class="back-btn-link" (click)="closePopup()"> &lt; BACK </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12" style="padding-left: 2%">
+      <div class="userDetail-box">
+
+        <div class="row">
+          <!-- PHOTO -->
+          <div class="col-md-3 photoBoxPadding">
+            <div class="photoBG "></div>
+          </div>
+
+          <!-- COL 2 -->
+          <div class="col-md-3" style="text-align: left;padding-top:1%">
+            <div class="row">
+              <div class="userDetail-lbl">
+                Name
+                <p class="userDetail-val">{{selectedData.fullName}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="userDetail-lbl">
+                Position
+                <p class="userDetail-val">{{selectedData.roleName}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="userDetail-lbl">
+                Career Step
+                <p class="userDetail-val">{{selectedData.clCode}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="userDetail-lbl">
+                Email
+                <p class="userDetail-val">{{selectedData.emailAddress}}</p>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- COL 3 -->
+          <div class="col-md-3" style="text-align: left;padding-top:1%;">
+            <div class="row">
+              <div class="userDetail-lbl">
+                Employee ID
+                <p class="userDetail-val">{{selectedData.employeeNum}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="userDetail-lbl">
+                Location
+                <p class="userDetail-val">{{selectedData.regionId}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="userDetail-lbl">
+                Department
+                <p class="userDetail-val">{{selectedData.teamName}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="userDetail-lbl">
+                Project
+                <p class="userDetail-val">On Bench</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- COL 4 -->
+          <div class="col-md-3" style="text-align: left;padding-top:1%;">
+            <div class="row">
+              <div class="userDetail-lbl">
+                Immediate Supervisor
+                <p class="userDetail-val">{{selectedData.supervisorName}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="userDetail-lbl">
+                Manager
+                <p class="userDetail-val">{{selectedData.pmName}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="userDetail-lbl">
+                Employee Status
+                <p [ngClass]="{'userDetail-val-inactive': selectedData.empStatus === 'Inactive', 'userDetail-val-active': selectedData.empStatus === 'Active'}" 
+                class="userDetail-val">{{selectedData.empStatus}}</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top: 1%;">
+    <div style="padding-left: 2%; overflow-y: auto; height: 40vh;width:89%">
+      <app-accordion [headerTexts]="hdrCert" class="hide-border header-resize">
+        <div style="margin-left: 2%">
+          <approver-member-certificate  [selectedData]="selectedData"></approver-member-certificate>
+        </div>
+      </app-accordion>
+
+      <app-accordion [headerTexts]="hdrApprovals" class="hide-border header-resize">
+        <div style="margin-left: 2%">
+          <approver-member-approvals [selectedData]="selectedData"></approver-member-approvals>
+        </div>
+      </app-accordion>
+
+      <app-accordion [headerTexts]="hdrTrainings" class="hide-border header-resize">
+        <div style="margin-left: 2%">
+          <approver-member-trainings [selectedData]="selectedData"></approver-member-trainings>
+        </div>
+      </app-accordion>
+    </div>
+  </div>
+
+</div>

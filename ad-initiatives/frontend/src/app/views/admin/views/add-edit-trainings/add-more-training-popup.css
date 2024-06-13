@@ -1,0 +1,70 @@
+.popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(15, 15, 15, 0.5);
+  z-index: 1000;
+  height: 30%;
+  width: 700px; /* Adjust width as needed */
+  border-radius: 10px; /* Rounded corners */
+  overflow-y: auto;
+}
+
+.text-name{
+  width: 210px;
+  height: 32px;
+  border-radius: 7px;
+  margin-bottom: 7px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-link{
+  height: 32px;
+  width: 380px;
+  border-radius: 7px;
+  margin-bottom: 7px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.h6{
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 2px;
+}
+
+.btn-button-save {
+  width: 80px;
+  height: 35px;
+  background-color: rgb(119, 11, 119);
+  border: 2px solid gray;
+  border-radius: 5px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  cursor: pointer;
+}
+
+.pi.pi-plus{
+  font-size: 18px;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+.pi.pi-trash{
+  font-size: 18px;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+.action-button {
+  cursor: pointer;
+  background-repeat: no-repeat;
+}
+
+.del-img {
+  background-image: url("/assets/img/Delete.png");
+  color: #D54147;
+  padding-left: 1em;
+}

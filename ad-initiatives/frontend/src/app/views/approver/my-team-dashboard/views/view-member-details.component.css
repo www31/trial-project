@@ -1,0 +1,77 @@
+.popup-container {
+  position: fixed;
+  background-color:#EBDDFF;
+  /* background-color:white; */
+  height: 100%;
+  width: 90%; 
+}
+
+.back-btn-link {
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.userDetail-box {
+  width: 89%;
+  height: max-content;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.photoBG {
+  width: 200px;
+  height: 200px;
+  background: #A769FF;
+  border-radius: 50%;
+}
+
+.photoBoxPadding {
+  padding-left: 3%;
+  padding-top: 1%;
+}
+
+.userDetail-lbl {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.userDetail-val {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.userDetail-val-active {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: green;
+}
+
+.userDetail-val-inactive {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: red;
+}
+
+.hide-border .p-accordion-content {
+  border: 0px !important;
+}
+
+.header-resize .p-accordion-header-text {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+a {
+  font-weight: normal !important;
+  font-size: 16px !important;
+}

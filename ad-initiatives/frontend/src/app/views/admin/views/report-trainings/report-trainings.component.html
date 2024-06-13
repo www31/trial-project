@@ -1,0 +1,39 @@
+<ng-container>
+    <div class="row main-screen">
+        <div class="col-md-12">
+            <div class="row">
+                <label class="subHeader">
+                    Reports
+                </label>
+            </div>
+            <div class="col-md-12 ">
+                <div class="contentScreen">
+                    <p-card class="contentCard table">
+                        <div class="row">
+                            <label class="title-label">
+                                Training Data
+                            </label>
+                            <app-table 
+                                (view)="onView($event)"
+                                (edit)="onEdit($event)"
+                                (delete)="onDelete($event)"
+                                (sort)="onSort2($event)"
+                                (sortChange)="onSort($event)"
+                                [showButtonReportTrainings]="true"
+                            ></app-table>
+                        </div>
+                        <!-- <div class="row">
+                            <app-resource-details [memberDtl]="selectedMemberDtl"></app-resource-details>
+                        </div>
+                        <div class=" row backButton">
+                            <div class="col-md-10"></div>
+                            <div class="col-md-2" style="text-align: right;">
+                                <app-custom-button [label]="'back'" (buttonClicked)="backManageResource()"></app-custom-button>
+                            </div>
+                        </div> -->
+                    </p-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

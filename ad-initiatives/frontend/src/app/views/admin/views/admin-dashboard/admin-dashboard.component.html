@@ -1,0 +1,42 @@
+<ng-container>
+    <div class="row main-screen">
+        <div class="col-md-12">
+            <div class="row">
+                <label class="subHeader">
+                    Dashboard
+                </label>
+            </div>
+            <div class="col-md-12">
+                <div class="contentScreen">
+                    <p-card class="contentCard">
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <label class="titleLabel" style="text-align: center;">
+                                    Training Progress Data
+                                </label>
+                                <p-chart type="doughnut" [data]="trainingProgressData" [options]="chartOptions"
+                                    [width]="'220'" [height]="'320'"></p-chart>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="titleLabel" style="text-align: center;">
+                                    Active Cost Vs Budget
+                                </label>
+                                <p-chart type="doughnut" [data]="activeVsBudgetData"
+                                [width]="'220'" [height]="'270'"></p-chart>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="titleLabel" style="text-align: center;">
+                                    Certification Demands Vs Approved
+                                </label>
+                                <p-chart type="doughnut" [data]="certVsApproved"
+                                [width]="'220'" [height]="'270'"></p-chart>
+                            </div>
+
+                        </div>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

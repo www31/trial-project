@@ -1,0 +1,36 @@
+label {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: large;
+    color: black;
+}
+
+
+/* Basic styling for the badge */
+.badge {
+    padding: 0.6em 1.1em; /* Padding around the content inside the span */
+    border: 1px solid #522A8B; /* Border with solid line and color */
+    border-radius: 1em; /* Border radius, makes the corners more rounded */
+    background-color: #EBDDFF; /* Background color of the span */
+    color: #522A8B; /* Text color */
+    font-size: 0.9em; /* Font size of the text */
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif; /* Font family */
+}
+
+.badgeList {
+    padding: 0.6em 1.1em; /* Padding around the content inside the span */
+    border: 1px solid #522A8B; /* Border with solid line and color */
+    border-radius: 1em; /* Border radius, makes the corners more rounded */
+    background-color: #f2eef8; /* Background color of the span */
+    color: #522A8B; /* Text color */
+    font-size: 0.9em; /* Font size of the text */
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif; /* Font family */
+}
+
+.badges-container {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow badges to wrap to the next line if necessary */
+    gap: 10px; /* Add some spacing between badges */
+}

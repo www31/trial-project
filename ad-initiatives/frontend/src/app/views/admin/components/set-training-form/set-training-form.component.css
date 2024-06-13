@@ -1,0 +1,240 @@
+.main-set-training-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 12000;
+}
+
+.set-training-details{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    padding: 32px 32px 120px 32px; 
+    border-radius: 5px;
+    z-index: 1100;
+    width: 45%;
+    gap: 0.5em;
+    margin-inline: auto;
+    overflow-y: auto;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.main-user-list-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 13000;
+    overflow: hidden;
+}
+
+.user-list-modal-contents {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    padding: 32px 32px 120px 32px; 
+    border-radius: 5px;
+    z-index: 2100;
+    width: 90%;
+    gap: 0.5em;
+    margin-inline: auto;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 1;
+}
+
+.set-training-contents {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    align-items: center;
+}
+
+.main-userlist {
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-auto-rows: auto;
+    padding: 1em;
+    gap: 0.5em;
+}
+
+.user{
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.user:hover, .user.selected {
+    background-color: var(--medium-purple);
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-details p{
+    margin-bottom: 0;
+}
+
+.user-details p:first-child {
+    font-size: 15px;
+}
+
+.user-contents {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
+.user-contents img{
+    height: 22px;
+    cursor: pointer;
+}
+
+.sub-details {
+    font-size: 10px;
+}
+
+.main-selected-user-list {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 1em;
+}
+
+.main-selected-user-list p{
+    margin-bottom: 0;
+}
+
+.main-selected-user-list p:nth-child(2){
+    margin-top: -5px;
+    color: gray;
+}
+
+.disabled-button {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+  
+.disabled-button:hover {
+    background-color: inherit;
+    color: inherit;
+}
+
+.set-training-category {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+}
+
+.set-training-sub-category {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+}
+
+.set-training-name {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 65%;
+}
+
+.set-training-sub-category-userlist {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 35%;
+}
+
+.set-training-name input {
+    padding: 8px;
+}
+
+.singleselect {
+    width: 100%;
+    height: 90%;
+}
+
+.multiselect-training {
+    width: 100%;
+    height: 50%;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #979292;
+    border-radius: 5px;
+}
+
+.multiselect-panel-training {
+    display: flex;
+    flex-direction: column;
+}
+
+.multiselect-panel-training .singleselect-panel, ul{
+    padding: 0;
+    font-size: 15px;
+}
+
+.multiselect-panel-training input{
+    height: 2em;
+    width: 100%;
+}
+
+.p-multiselect-training-header {
+    padding: 1em;
+}
+
+.multiselect-panel-training li{
+    padding: 0 0 0.5em 1em;
+    display: flex;
+    align-items: center;
+}
+
+.multiselect-panel-training span{
+    font-size: 15px;
+}
+
+.p-multiselect-token{
+    font-size: 12px;
+    height: 70%;
+    margin-top: 5px;
+}
+
+.set-training-form-group {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+}
+
+.set-training-form-group-sets {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+}
+
+.set-training-form-button {
+    /* position: absolute; */
+    display: flex;
+    gap: 0.5em;
+    justify-content: flex-end;
+    /* bottom: 0;
+    right: 0;
+    margin-right: 1em;
+    margin-bottom: 1em; */
+}

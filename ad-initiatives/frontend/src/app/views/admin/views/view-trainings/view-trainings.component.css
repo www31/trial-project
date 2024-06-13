@@ -1,0 +1,75 @@
+.popup-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%; /* Set width as needed */
+  
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Add some margin at the bottom */
+}
+
+.popup-header h2 {
+  margin: 0;
+}
+/*   
+.popup-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; Align items at the top
+  margin-bottom: 30px; Add some margin between rows
+  font-weight: bold;
+  color: var(--purple);
+  
+} */
+
+.title-label{    
+  font-weight: bold;
+  color: var(--purple);    
+  margin-top: 20px
+}
+
+.black-label{    
+  font-weight: bold;
+  color: black;
+  margin-bottom: 50px;
+  
+}
+
+.popup-content .form-group {
+  flex-grow: 1; /* Each form group takes up equal space */
+  
+}
+
+.popup-content .form-group:not(:last-child) {
+  margin-right: 10px; /* Add some spacing between textboxes */
+}
+
+.popup-footer {
+  text-align: right;
+}
+
+
+.label-form{
+  color: 1px solid var(--purple)
+}
+
+.form-group-dates {
+  margin-bottom: 5px; /* Add some margin between form groups */
+  max-width: 30%;
+  float: left;
+}
+
+.popup-overlay{
+  width: 100%
+}
+
+.backButton{
+  padding-top: 20px;
+}
